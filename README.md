@@ -3,14 +3,14 @@
 
 Este proyecto fue creado con [Create React App](https://github.com/facebook/create-react-app).
 
-## Installation
+## Instacion
 ***
-<!-- Puedes clonar este proyecto en tu computador. 
+Puedes clonar este proyecto en tu computador. 
 ```
 $ git clone https://github.com/Dan33311/q-and-a-app.git
 $ cd ../path/to/the/file
 $ npm install
-$ npm start -->
+$ npm start
 ```
 
 ## Scripts

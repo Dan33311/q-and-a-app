@@ -1,11 +1,11 @@
 import './App.css';
-import Questions from './components/Questions';
+import Categories from './components/Categories';
 
 function App() {
   
   return (
     <div className="App">
-      <Questions/>
+      <Categories/>
     </div>
   );
 }

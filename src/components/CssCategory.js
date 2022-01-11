@@ -2,6 +2,7 @@ import { useState } from "react";
 import questions from "../data/questionsCSS";
 import Categories from "./Categories";
 
+
 const CssCategory = () => {
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -32,15 +33,6 @@ const CssCategory = () => {
     setRenderThis(<Categories/>)
   }
 
-  const handleClickToCategories = () => {
-    
-  }
-
-  // const tryAgain = () => {
-    
-  //   setScore(0);
-  // }
-
 
   return (
     <>
@@ -53,6 +45,7 @@ const CssCategory = () => {
             </div>
             <div className="question-text"> <span>{currentQuestion + 1}.</span> {questions[currentQuestion].questionText}</div>
             <div className="answer-options" >
+              <p>** Solo se puede selecionar la respuesta que creas correcta una vez.</p>
               {questions[currentQuestion].answersOptions.map( (answerOption, index) => (
                 <div className="answers-btn" key={index}>
                   <button onClick={() => {handleAnswerClick(answerOption.isCorrect)}}>{answerOption.answerText}</button>
@@ -68,7 +61,7 @@ const CssCategory = () => {
           //   <h4>game finshed you earned {score} BTC</h4>
           //   <button onClick={() => handleClickToCategories()}>Categorias</button>
           // </div>
-          renderThis
+          null
         ) 
       }
       

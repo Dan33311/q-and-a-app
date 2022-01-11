@@ -1,5 +1,7 @@
 import { useState } from "react";
 import questions from "../data/questionsJavascript";
+import Categories from "./Categories";
+
 
 const JavascriptCategory = () => {
 
@@ -9,6 +11,8 @@ const JavascriptCategory = () => {
   
   const [gameFinished, setGameFinished] = useState(false);
 
+  const [renderThis, setRenderThis] = useState();
+
   const handleAnswerClick = (isCorrect) => {
     if(isCorrect === true) {
       setScore(score + 0.00002);
@@ -17,6 +21,8 @@ const JavascriptCategory = () => {
       setCurrentQuestion(currentQuestion + 1);
     } else {
       alert('next category');
+      setGameFinished(true)
+      setRenderThis(<Categories/>)
     }
   }
   
@@ -24,11 +30,7 @@ const JavascriptCategory = () => {
     setGameFinished(true)
     alert(`game finished you earned ${score} BTC`);
     setCurrentQuestion(0)
-  }
-
-  const tryAgain = () => {
-    setGameFinished(false);
-    setScore(0);
+    setRenderThis(<Categories/>)
   }
 
 
@@ -51,14 +53,14 @@ const JavascriptCategory = () => {
             </div>
             <div className="retry-btn">
               <button onClick={() => handleRetryClick()}>Retirarse</button>
-              {/* <button onClick={() => <h4>game finshed you earned {score} BTC</h4>}>Retirarseee</button> */}
             </div> 
           </>
         ) : (
-          <div>
-            <h4>game finshed you earned {score} BTC</h4>
-            <button onClick={() => tryAgain()}>Jugar de nuevo</button>
-          </div>
+          // <div>
+          //   <h4>game finshed you earned {score} BTC</h4>
+          //   <button onClick={() => handleClickToCategories()}>Categorias</button>
+          // </div>
+          null
         ) 
       }
       

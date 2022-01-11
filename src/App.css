@@ -34,12 +34,31 @@
   
 } */
 
+.questions-head {
+  margin: 100px 50px 20px 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* outline: 1px solid lime; */
+}
 .question-count {
   color: whitesmoke;
-  margin-top: 150px;
-  margin-left: 50px;
-  text-align: start;
+  margin-left: 20px;
   /* outline: 1px solid salmon; */
+}
+
+.question-count span {
+  color: #61dafb;
+}
+.score-count {
+  color: whitesmoke;
+  margin-right: 20px;
+  /* outline: 1px solid salmon; */
+}
+
+.score-count span {
+  color: #efa94a;
 }
 
 .question-text {
@@ -49,9 +68,12 @@
   border-radius: 6px;
   color: whitesmoke;
 }
+.question-text span {
+  color: #61dafb;
+}
 
 .answer-options {
-  margin: 0px 50px 50px 50px;
+  margin: 0px 50px 30px 50px;
   padding: 50px;
   border: 4px solid #61dafb;
   border-radius: 6px;
@@ -66,6 +88,25 @@
   width: 96%;
   margin-top: 20px;
   padding: 10px;
+}
+
+.answers-btn:hover button{
+  background-color: #61dafb;
+  color: #282c34;
+}
+
+.retry-btn button {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  color: #ff6961;
+  background-color: #282c34;
+  border: 3px solid #ff6961;
+  border-radius: 6px;
+  margin: 10px 50px 20px 50px;
+  padding: 10px 100px;
+}
+.retry-btn:hover button {
+  background-color: #ff6961;
+  color: #282c34;
 }
 
 /* @keyframes App-logo-spin {

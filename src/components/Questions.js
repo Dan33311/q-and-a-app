@@ -1,8 +1,11 @@
+import { useState } from "react";
+
+
 const Questions = () => {
 
   const questions = [
     {
-      id: 1,
+      questionId: 1,
       questionText : '¿Qué significa CSS?',
       answersOptions: [
         { answerText: 'Color Style Sheets', isCorrect: false },
@@ -12,7 +15,7 @@ const Questions = () => {
       ]
     },
     {
-      id: 2,
+      questionId: 2,
       questionText : '¿Cómo podemos añadir un comentario en una hoja de estilo CSS?',
       answersOptions: [
         { answerText: '/* esto es un comentario CSS */', isCorrect: true },
@@ -22,7 +25,7 @@ const Questions = () => {
       ]
     },
     {
-      id: 3,
+      questionId: 3,
       questionText : '¿En qué sección de la página HTML podemos definir una hoja de estilo interna CSS?',
       answersOptions: [
         { answerText: 'En la sección <head>', isCorrect: true },
@@ -32,7 +35,7 @@ const Questions = () => {
       ]
     },
     {
-      id: 4,
+      questionId: 4,
       questionText : '¿Para que se utiliza la regla @keyframes?',
       answersOptions: [
         { answerText: 'Transición', isCorrect: false },
@@ -42,7 +45,7 @@ const Questions = () => {
       ]
     },
     {
-      id: 5,
+      questionId: 5,
       questionText : '¿Cual es la respuesta correcta para generar un efecto de transición?',
       answersOptions: [
         { answerText: 'transition: height .8s;', isCorrect: true },
@@ -53,19 +56,37 @@ const Questions = () => {
     },
   ]
 
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+
+  const [score, setScore] = useState(0);
+  
+  const handleAnswerClick = (isCorrect) => {
+    if(isCorrect === true) {
+      setScore(score + 0.00002);
+    }
+    if(currentQuestion < questions.length - 1) {
+      setCurrentQuestion(currentQuestion + 1);
+    } else {
+      alert('next category');
+    }
+  }
 
   return (
     <>
       <div className="questions-head">
-        <div className="question-count">Question number: _ of {questions.length}</div>
-        <div className="question-text">{questions[0].questionText}</div>
+        <div className="question-count">Pregunta numero: <span>{currentQuestion + 1}</span> de {questions.length}</div>
+        <div className="score-count">Has ganado: 💳<span>{score}</span> BTC</div>
       </div>
+      <div className="question-text"> <span>{currentQuestion + 1}.</span> {questions[currentQuestion].questionText}</div>
       <div className="answer-options" >
-        {questions[0].answersOptions.map( answerOption => (
+        {questions[currentQuestion].answersOptions.map( answerOption => (
           <div className="answers-btn">
-            <button>{answerOption.answerText}</button>
+            <button onClick={() => {handleAnswerClick(answerOption.isCorrect)}}>{answerOption.answerText}</button>
           </div>
         ))}
+      </div>
+      <div className="retry-btn">
+        <button onClick={() => alert(`game finshed you earned ${score} BTC`)}>Retirarse</button>
       </div>
     </>
   );

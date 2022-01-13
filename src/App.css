@@ -33,6 +33,10 @@
 .categ-container {
   margin-top: 60px;
   color: whitesmoke;
+
+  /* borrar despues */
+  margin: 20px;
+  outline: 1px solid salmon;
 }
 .categ-container p {
   margin-top: 60px;
@@ -81,7 +85,10 @@
 .score-count {
   color: whitesmoke;
   margin-right: 20px;
-  /* outline: 1px solid salmon; */
+
+  /* borrar despues */
+  outline: 1px solid lime;
+  margin: 20px;
 }
 
 .score-count span {

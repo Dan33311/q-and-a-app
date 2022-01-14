@@ -1,7 +1,5 @@
 import './App.css';
-// import Categories from './components/Categories';
-// import Padre from './components/Padre'
-import CategoriesComponent from './components/CategoriesComponent';
+import Categories from './components/Categories';
 
 function App() {
   
@@ -9,10 +7,8 @@ function App() {
     <div className="App">
       <>
         <h2>Concurso de preguntas y respuestas</h2>
-        <CategoriesComponent/>
+        <Categories/>
       </>
-      {/* <Padre /> */}
-      {/* <Categories/> */}
     </div>
   );
 }

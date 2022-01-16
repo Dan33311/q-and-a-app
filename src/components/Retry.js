@@ -1,16 +1,10 @@
-const Retry = ({ score, setCategoryFinished }) => {
-
-  // TODO: use the correct function
-  const handleClickOkButton = () => {
-    setCategoryFinished(true)
-  }
-
+const Retry = ({ score, handleClickRetryOkButton }) => {
 
   return ( 
     <div className='game-finished'>
       <h4>🆗 Retry</h4>
       <p>You earned: 💳 <span>{ score }</span> BTC</p>
-      <button onClick={() => handleClickOkButton()}>OK</button>
+      <button onClick={handleClickRetryOkButton}>OK</button>
     </div>
   );
 }

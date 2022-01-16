@@ -54,27 +54,6 @@
   color: #282c34;
 }
 
-/* .questions-head {
-  
-} */
-
-.questions-head {
-  margin: 20px 50px 20px 50px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  /* outline: 1px solid lime; */
-}
-.question-count {
-  color: whitesmoke;
-  margin-left: 20px;
-  /* outline: 1px solid salmon; */
-}
-
-.question-count span {
-  color: #61dafb;
-}
 .score-count {
   color: whitesmoke;
   font-size: 1.2rem;
@@ -91,6 +70,32 @@
 .score-count span {
   color: #efa94a;
 }
+
+.questions-head {
+  /* margin: 0px 50px 0px 50px; */
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: space-between; */
+  /* outline: 1px solid lime; */
+}
+
+.questions-head h3{
+  margin-top: 0px;
+  color: whitesmoke;
+  /* outline: 1px solid salmon; */
+}
+
+.question-count {
+  color: whitesmoke;
+  margin-bottom: 10px;
+  /* outline: 1px solid salmon; */
+}
+
+.question-count span {
+  color: #61dafb;
+}
+
 
 .question-text {
   margin: 10px 50px 20px 50px;
@@ -157,8 +162,15 @@
 }
 
 .game-finished p {
-  margin-top: 30px;
+  margin-top: 40px;
 }
+
+.game-finished p:nth-child(3) {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  /* background-color: yellow; */
+}
+
 .game-finished span {
   color: #efa94a;
   font-size: 30px;
@@ -171,7 +183,7 @@
   border: 3px solid #00E900;
   border-radius: 6px;
   width: 140px;
-  margin-top: 40px;
+  margin-top: 10px;
   padding: 10px;
 }
 

@@ -2,14 +2,17 @@ import { useState } from 'react';
 import questions from '../data/questionsCSS'
 import WrongAnswer from '../components/WrongAnswer';
 import CategoryFinished from './CategoryFinished';
+import Retry from './Retry';
 
 
-const CategoryCss = ({ onChange, score }) => {
+const CategoryCss = ({ onChange, score, categorySelected }) => {
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [gameFinished, setGameFinished] = useState(false);
   const [wrongAnswer, setWrongAnswer] = useState(false);
   const [categoryFinished, setCategoryFinished] = useState(false)
+  const [retry, setRetry] = useState(false)
+
 
   const handleAnswerClick = (isCorrect) => {
     if(isCorrect === true) {
@@ -29,8 +32,20 @@ const CategoryCss = ({ onChange, score }) => {
 
   const handleRetryClick = () => {
     setGameFinished(true)
+    setRetry(true)
+    setCategoryFinished(true)
     alert(`game finished you earned ${score} BTC`);
     setCurrentQuestion(0)
+  }
+
+  const handleClickRetryOkButton = () => {
+    setRetry(false)
+    setCategoryFinished(true);
+    console.log('setCategoryFinished:', categoryFinished);
+  }
+
+  const newF = () => {
+    setGameFinished(true);
   }
 
 
@@ -40,6 +55,7 @@ const CategoryCss = ({ onChange, score }) => {
         (
           <>
             <div className="questions-head">
+              <h3>Categoria <span>{categorySelected}</span></h3>
               <div className="question-count">Pregunta numero: <span>{currentQuestion + 1}</span> de {questions.length}</div>
             </div>
             <div className="question-text"> <span>{currentQuestion + 1}.</span> {questions[currentQuestion].questionText}</div>
@@ -60,6 +76,15 @@ const CategoryCss = ({ onChange, score }) => {
         ) 
       }
       { wrongAnswer === true ? <WrongAnswer score={score} /> : null }
+      { retry === true 
+        ? <Retry 
+            score={score} 
+            setCategoryFinished={setCategoryFinished}
+            handleClickRetryOkButton={handleClickRetryOkButton}
+          />
+        : null
+      }
+      {/* TODO: fix when wrong answer */}
       { categoryFinished === true ? null : <CategoryFinished score={score} categoryFinished={categoryFinished} setCategoryFinished={setCategoryFinished} /> }
     </>
   );

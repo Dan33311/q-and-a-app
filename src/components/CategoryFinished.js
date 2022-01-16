@@ -9,6 +9,7 @@ const CategoryFinished = ({ score, setCategoryFinished }) => {
     <div className='game-finished'>
       <h4>✅ Correct answers</h4>
       <p>You earned: 💳 <span>{ score }</span> BTC</p>
+      <p>Please select a new category</p>
       <button onClick={() => handleClickOkButton()}>OK</button>
     </div>
   );

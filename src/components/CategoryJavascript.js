@@ -2,16 +2,16 @@ import { useState } from 'react';
 import questions from "../data/questionsJavascript";
 import WrongAnswer from '../components/WrongAnswer';
 import CategoryFinished from './CategoryFinished';
-import Retry from './Retry';
+// import Retry from './Retry';
 
 
-const CategoryJavascript = ({ onChange, score }) => {
+const CategoryJavascript = ({ onChange, score, categorySelected }) => {
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [gameFinished, setGameFinished] = useState(false);
   const [wrongAnswer, setWrongAnswer] = useState(false);
   const [categoryFinished, setCategoryFinished] = useState(false)
-  const [retry, setRetry] = useState(false)
+  // const [retry, setRetry] = useState(false)
 
   const handleAnswerClick = (isCorrect) => {
     if(isCorrect === true) {
@@ -35,9 +35,9 @@ const CategoryJavascript = ({ onChange, score }) => {
     setCurrentQuestion(0)
   }
 
-  const newF = () => {
-    setGameFinished(true);
-  }
+  // const newF = () => {
+  //   setGameFinished(true);
+  // }
 
 
   return (
@@ -47,6 +47,7 @@ const CategoryJavascript = ({ onChange, score }) => {
         (
           <>
             <div className="questions-head">
+              <h3>Categoria <span>{categorySelected}</span></h3>
               <div className="question-count">Pregunta numero: <span>{currentQuestion + 1}</span> de {questions.length}</div>
             </div>
             <div className="question-text"> <span>{currentQuestion + 1}.</span> {questions[currentQuestion].questionText}</div>

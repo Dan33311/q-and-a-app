@@ -6,7 +6,6 @@ import CategoryCss from "./components/CategoryCss";
 import CategoryJavascript from "./components/CategoryJavascript";
 
 
-
 function App() {
 
   const [categorySelected, setCategorySelected] = useState('')

@@ -1,10 +1,14 @@
-const Retry = ({ score, handleClickRetryOkButton }) => {
+const Retry = ({ score }) => {
+
+  const handleClickTryAgainButton = () => {
+    window.location.reload(true)
+  }
 
   return ( 
-    <div className='game-finished'>
-      <h4>🆗 Retry</h4>
-      <p>You earned: 💳 <span>{ score }</span> BTC</p>
-      <button onClick={handleClickRetryOkButton}>OK</button>
+    <div className='retry-section wrong-answer'>
+      <h4>😸 Te retiraste !</h4>
+      <p>Has ganado: 💳 <span>{ score }</span> BTC</p>
+      <button className="green-btn" onClick={handleClickTryAgainButton}>Juego nuevo</button>
     </div>
   );
 }

@@ -6,10 +6,10 @@ const WrongAnswer = ({ score }) => {
   }
 
   return (
-    <div className='game-finished'>
-      <h4>❌ Wrong Answer</h4>
-      <p>You earned: 💳 <span>{ score }</span> BTC</p>
-      <button onClick={() => handleClickTryAgainButton()}>Juego nuevo</button>
+    <div className='wrong-answer'>
+      <h4>❌ Respuesta incorrecta</h4>
+      <p>Has ganado: 💳 <span>{ score }</span> BTC</p>
+      <button className="green-btn" onClick={() => handleClickTryAgainButton()}>Juego nuevo</button>
     </div>
   );
 }

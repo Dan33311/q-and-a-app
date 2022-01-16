@@ -6,11 +6,11 @@ const CategoryFinished = ({ score, setCategoryFinished }) => {
   }
 
   return (
-    <div className='game-finished'>
-      <h4>✅ Correct answers</h4>
-      <p>You earned: 💳 <span>{ score }</span> BTC</p>
-      <p>Please select a new category</p>
-      <button onClick={() => handleClickOkButton()}>OK</button>
+    <div className='wrong-answer game-finished'>
+      <h4>✅ Respuestas correctas !</h4>
+      <p>Has ganado: 💳 <span>{ score }</span> BTC</p>
+      <p>Porfavor seleccione una nueva categoria</p>
+      <button className="green-btn" onClick={() => handleClickOkButton()}>OK</button>
     </div>
   );
 }

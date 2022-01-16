@@ -2,7 +2,7 @@ import { useState } from 'react';
 import questions from "../data/questionsJavascript";
 import WrongAnswer from '../components/WrongAnswer';
 import CategoryFinished from './CategoryFinished';
-// import Retry from './Retry';
+import Retry from './Retry';
 
 
 const CategoryJavascript = ({ onChange, score, categorySelected }) => {
@@ -11,7 +11,8 @@ const CategoryJavascript = ({ onChange, score, categorySelected }) => {
   const [gameFinished, setGameFinished] = useState(false);
   const [wrongAnswer, setWrongAnswer] = useState(false);
   const [categoryFinished, setCategoryFinished] = useState(false)
-  // const [retry, setRetry] = useState(false)
+  const [retry, setRetry] = useState(false)
+
 
   const handleAnswerClick = (isCorrect) => {
     if(isCorrect === true) {
@@ -30,9 +31,17 @@ const CategoryJavascript = ({ onChange, score, categorySelected }) => {
   }
 
   const handleRetryClick = () => {
-    alert(`game finished you earned ${score} BTC`);
     setGameFinished(true)
+    setRetry(true)
+    setCategoryFinished(true)
+    alert(`game finished you earned ${score} BTC`);
     setCurrentQuestion(0)
+  }
+
+  const handleClickRetryOkButton = () => {
+    setRetry(false)
+    setCategoryFinished(true);
+    console.log('setCategoryFinished:', categoryFinished);
   }
 
   // const newF = () => {
@@ -68,14 +77,15 @@ const CategoryJavascript = ({ onChange, score, categorySelected }) => {
         ) 
       }
       { wrongAnswer === true ? <WrongAnswer score={score} /> : null }
-      { categoryFinished === true ? null : <CategoryFinished score={score} categoryFinished={categoryFinished} setCategoryFinished={setCategoryFinished} /> }
-      {/* { retry === true 
-        ? null
-        : <Retry 
-        score={score} 
-        setCategoryFinished={setCategoryFinished}
-      /> 
-      } */}
+      { retry === true 
+        ? <Retry 
+            score={score} 
+            setCategoryFinished={setCategoryFinished}
+            handleClickRetryOkButton={handleClickRetryOkButton}
+          />
+        : null
+      }
+      {/* { categoryFinished === true ? null : <CategoryFinished score={score} categoryFinished={categoryFinished} setCategoryFinished={setCategoryFinished} /> } */}
     </>
   );
 }

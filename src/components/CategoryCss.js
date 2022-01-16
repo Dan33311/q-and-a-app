@@ -16,33 +16,36 @@ const CategoryCss = ({ onChange, score, categorySelected }) => {
 
   const handleAnswerClick = (isCorrect) => {
     if(isCorrect === true) {
-      onChange();
+      onChange(); // if correct answer -> increase the score
     } else {
-      // alert('wrong answer');
-      setGameFinished(true)
       setWrongAnswer(true)
     }
     if(currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      alert('next category');
       setGameFinished(true)
     }
   }
 
-  const handleRetryClick = () => {
-    setGameFinished(true)
-    setRetry(true)
+  const handleClickRetryButton = () => {
     setCategoryFinished(true)
-    alert(`game finished you earned ${score} BTC`);
+    setRetry(true)
     setCurrentQuestion(0)
   }
 
-  const handleClickRetryOkButton = () => {
-    setRetry(false)
-    setCategoryFinished(true);
-    console.log('setCategoryFinished:', categoryFinished);
-  }
+  console.log('gameFinished:', gameFinished);
+  console.log('wrongAnswer:', wrongAnswer);
+  console.log('categoryFinished:', categoryFinished);
+  console.log('retry:', retry);
+  console.log('------------------------------------------------');
+
+  // TODO: No borrar aun
+  // ⬇ ya tengo esta funcion en el componente Retry
+  // const handleClickTryAgainButton = () => {
+  //   setRetry(false)
+  //   setCategoryFinished(true);
+  //   console.log('setCategoryFinished:', categoryFinished);
+  // }
 
   const newF = () => {
     setGameFinished(true);
@@ -51,7 +54,7 @@ const CategoryCss = ({ onChange, score, categorySelected }) => {
 
   return (
     <>
-      { gameFinished === false ?
+      { gameFinished === false && retry === false && wrongAnswer === false ?
         (
           <>
             <div className="questions-head">
@@ -68,26 +71,35 @@ const CategoryCss = ({ onChange, score, categorySelected }) => {
               ))}
             </div>
             <div className="retry-btn">
-              <button onClick={() => handleRetryClick()}>Retirarse</button>
+              <button onClick={() => handleClickRetryButton()}>Retirarse</button>
             </div> 
           </>
         ) : (
           null
-        ) 
+          
+        )
       }
       { wrongAnswer === true ? <WrongAnswer score={score} /> : null }
-      { retry === true 
+      { retry === true && categoryFinished === true
         ? <Retry 
-            score={score} 
-            setCategoryFinished={setCategoryFinished}
-            handleClickRetryOkButton={handleClickRetryOkButton}
+            score={score}
+            // // TODO: No borrar aun ⬇ ya tengo esta funcion en el componente Retry 
+            // handleClickTryAgainButton={handleClickTryAgainButton}
           />
         : null
       }
-      {/* TODO: fix when wrong answer */}
-      { categoryFinished === true ? null : <CategoryFinished score={score} categoryFinished={categoryFinished} setCategoryFinished={setCategoryFinished} /> }
+      { gameFinished === true 
+        ? <CategoryFinished // respuestas correctas
+            score={score}
+            categoryFinished={categoryFinished} 
+            setCategoryFinished={setCategoryFinished}
+          />
+        : null
+      }
     </>
   );
 }
+
+
 
 export default CategoryCss;

@@ -26,6 +26,7 @@
   margin-top: 40px;
   /* outline: 1px solid lime; */
 }
+
 .categ-container {
   margin-top: 60px;
   color: whitesmoke;
@@ -37,7 +38,6 @@
 .categ-container p {
   margin-top: 60px;
 }
-
 .categ-container button {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   color: rgba(245, 245, 245, 0.959);
@@ -48,7 +48,6 @@
   margin: 10px 10px;
   padding: 10px;
 }
-
 .categ-container .categ-btn:hover {
   background-color: #61dafb;
   color: #282c34;
@@ -62,14 +61,13 @@
   /* borrar despues */
   /* outline: 1px solid lime; */
 }
-
 .score-count p {
   text-align: right;
 }
-
 .score-count span {
   color: #efa94a;
 }
+
 
 .questions-head {
   /* margin: 0px 50px 0px 50px; */
@@ -79,24 +77,19 @@
   /* justify-content: space-between; */
   /* outline: 1px solid lime; */
 }
-
 .questions-head h3{
   margin-top: 0px;
   color: whitesmoke;
   /* outline: 1px solid salmon; */
 }
-
 .question-count {
   color: whitesmoke;
   margin-bottom: 10px;
   /* outline: 1px solid salmon; */
 }
-
 .question-count span {
   color: #61dafb;
 }
-
-
 .question-text {
   margin: 10px 50px 20px 50px;
   padding: 50px;
@@ -108,20 +101,19 @@
   color: #61dafb;
 }
 
+
 .answer-options {
   margin: 0px 50px 30px 50px;
   padding: 50px;
   border: 4px solid #61dafb;
   border-radius: 6px;
 }
-
 .answer-options p {
   color: whitesmoke;
   text-align: start;
   margin-top: -30px;
   font-size: 14px;
 }
-
 .answers-btn button {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   color: rgba(245, 245, 245, 0.959);
@@ -132,11 +124,11 @@
   margin-top: 20px;
   padding: 10px;
 }
-
 .answers-btn:hover button{
   background-color: #61dafb;
   color: #282c34;
 }
+
 
 .retry-btn button {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -152,31 +144,38 @@
   color: #282c34;
 }
 
-.game-finished {
+
+.wrong-answer {
   color: whitesmoke;
   /* max-width: 300px; */
-  padding: 30px 30px 60px;
-  margin: 20px;
-  margin-top: 100px;
+  padding: 40px 30px 60px;
+  margin: 50px auto;
+  border: 4px solid #ff6961;
+  border-radius: 6px;
+  max-width: 600px;
   /* outline: 3px solid #ff6961; */
 }
-
-.game-finished p {
+.wrong-answer p {
   margin-top: 40px;
 }
-
-.game-finished p:nth-child(3) {
+.wrong-answer p:nth-child(3) {
   margin-top: 50px;
   margin-bottom: 10px;
   /* background-color: yellow; */
 }
-
-.game-finished span {
+.wrong-answer span {
   color: #efa94a;
   font-size: 30px;
 }
 
-.game-finished button {
+.retry-section {
+  border: 4px solid #efa94a;
+}
+
+.game-finished {
+  border: 4px solid #00E900;
+}
+.green-btn {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   background-color: transparent;
   color: #00E900;
@@ -186,8 +185,7 @@
   margin-top: 10px;
   padding: 10px;
 }
-
-.game-finished button:hover {
+.green-btn:hover {
   background-color: #00E900;
   color: #282c34;
 }

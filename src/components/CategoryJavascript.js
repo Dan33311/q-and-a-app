@@ -1,32 +1,42 @@
 import { useState } from 'react';
 import questions from "../data/questionsJavascript";
+import WrongAnswer from '../components/WrongAnswer';
+import CategoryFinished from './CategoryFinished';
+import Retry from './Retry';
 
 
-const CategoryJavascript = ({ onChange }) => {
+const CategoryJavascript = ({ onChange, score }) => {
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
-
   const [gameFinished, setGameFinished] = useState(false);
+  const [wrongAnswer, setWrongAnswer] = useState(false);
+  const [categoryFinished, setCategoryFinished] = useState(false)
+  const [retry, setRetry] = useState(false)
 
   const handleAnswerClick = (isCorrect) => {
     if(isCorrect === true) {
       onChange();
     } else {
-      alert('wrong answer');
+      // alert('wrong answer');
       setGameFinished(true)
+      setWrongAnswer(true)
     }
     if(currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      alert('next category');
+      // alert('next category');
       setGameFinished(true)
     }
   }
 
   const handleRetryClick = () => {
+    alert(`game finished you earned ${score} BTC`);
     setGameFinished(true)
-    alert(`game finished you earned xxx BTC`);
     setCurrentQuestion(0)
+  }
+
+  const newF = () => {
+    setGameFinished(true);
   }
 
 
@@ -53,15 +63,18 @@ const CategoryJavascript = ({ onChange }) => {
             </div> 
           </>
         ) : (
-          // TODO: implement a category over component
-          // <div>
-          //   <h4>game finshed you earned {score} BTC</h4>
-          //   <button onClick={() => handleClickToCategories()}>Categorias</button>
-          // </div>
           null
         ) 
       }
-      
+      { wrongAnswer === true ? <WrongAnswer score={score} /> : null }
+      { categoryFinished === true ? null : <CategoryFinished score={score} categoryFinished={categoryFinished} setCategoryFinished={setCategoryFinished} /> }
+      {/* { retry === true 
+        ? null
+        : <Retry 
+        score={score} 
+        setCategoryFinished={setCategoryFinished}
+      /> 
+      } */}
     </>
   );
 }

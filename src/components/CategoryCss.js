@@ -1,19 +1,23 @@
 import { useState } from 'react';
 import questions from '../data/questionsCSS'
+import WrongAnswer from '../components/WrongAnswer';
+import CategoryFinished from './CategoryFinished';
 
 
 const CategoryCss = ({ onChange, score }) => {
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
-
   const [gameFinished, setGameFinished] = useState(false);
+  const [wrongAnswer, setWrongAnswer] = useState(false);
+  const [categoryFinished, setCategoryFinished] = useState(false)
 
   const handleAnswerClick = (isCorrect) => {
     if(isCorrect === true) {
       onChange();
     } else {
-      alert('wrong answer');
+      // alert('wrong answer');
       setGameFinished(true)
+      setWrongAnswer(true)
     }
     if(currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
@@ -31,7 +35,6 @@ const CategoryCss = ({ onChange, score }) => {
 
 
   return (
-    
     <>
       { gameFinished === false ?
         (
@@ -40,7 +43,7 @@ const CategoryCss = ({ onChange, score }) => {
               <div className="question-count">Pregunta numero: <span>{currentQuestion + 1}</span> de {questions.length}</div>
             </div>
             <div className="question-text"> <span>{currentQuestion + 1}.</span> {questions[currentQuestion].questionText}</div>
-            <div className="answer-options" >
+            <div className="answer-options">
               <p>** Solo se puede selecionar la respuesta que creas correcta una vez.</p>
               {questions[currentQuestion].answersOptions.map( (answerOption, index) => (
                 <div className="answers-btn" key={index}>
@@ -53,15 +56,11 @@ const CategoryCss = ({ onChange, score }) => {
             </div> 
           </>
         ) : (
-          // TODO: implement a category over component
-          // <div>
-          //   <h4>game finshed you earned {score} BTC</h4>
-          //   <button onClick={() => handleClickToCategories()}>Categorias</button>
-          // </div>
           null
         ) 
       }
-      
+      { wrongAnswer === true ? <WrongAnswer score={score} /> : null }
+      { categoryFinished === true ? null : <CategoryFinished score={score} categoryFinished={categoryFinished} setCategoryFinished={setCategoryFinished} /> }
     </>
   );
 }

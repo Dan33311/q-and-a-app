@@ -47,9 +47,9 @@ const CategoryCss = ({ onChange, score, categorySelected }) => {
   //   console.log('setCategoryFinished:', categoryFinished);
   // }
 
-  const newF = () => {
-    setGameFinished(true);
-  }
+  // const newF = () => {
+  //   setGameFinished(true);
+  // }
 
 
   return (

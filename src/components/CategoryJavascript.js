@@ -18,41 +18,26 @@ const CategoryJavascript = ({ onChange, score, categorySelected }) => {
     if(isCorrect === true) {
       onChange();
     } else {
-      // alert('wrong answer');
-      setGameFinished(true)
       setWrongAnswer(true)
     }
     if(currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      // alert('next category');
       setGameFinished(true)
     }
   }
 
-  const handleRetryClick = () => {
-    setGameFinished(true)
-    setRetry(true)
+  const handleClickRetryButton = () => {
     setCategoryFinished(true)
-    alert(`game finished you earned ${score} BTC`);
+    setRetry(true)
     setCurrentQuestion(0)
   }
-
-  const handleClickRetryOkButton = () => {
-    setRetry(false)
-    setCategoryFinished(true);
-    console.log('setCategoryFinished:', categoryFinished);
-  }
-
-  // const newF = () => {
-  //   setGameFinished(true);
-  // }
 
 
   return (
     
     <>
-      { gameFinished === false ?
+      { gameFinished === false && retry === false && wrongAnswer === false ?
         (
           <>
             <div className="questions-head">
@@ -69,7 +54,7 @@ const CategoryJavascript = ({ onChange, score, categorySelected }) => {
               ))}
             </div>
             <div className="retry-btn">
-              <button onClick={() => handleRetryClick()}>Retirarse</button>
+              <button onClick={() => handleClickRetryButton()}>Retirarse</button>
             </div> 
           </>
         ) : (
@@ -79,13 +64,18 @@ const CategoryJavascript = ({ onChange, score, categorySelected }) => {
       { wrongAnswer === true ? <WrongAnswer score={score} /> : null }
       { retry === true 
         ? <Retry 
-            score={score} 
-            setCategoryFinished={setCategoryFinished}
-            handleClickRetryOkButton={handleClickRetryOkButton}
+            score={score}
           />
         : null
       }
-      {/* { categoryFinished === true ? null : <CategoryFinished score={score} categoryFinished={categoryFinished} setCategoryFinished={setCategoryFinished} /> } */}
+      { gameFinished === true 
+        ? <CategoryFinished // respuestas correctas
+            score={score}
+            categoryFinished={categoryFinished} 
+            setCategoryFinished={setCategoryFinished}
+          />
+        : null
+      }
     </>
   );
 }

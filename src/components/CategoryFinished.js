@@ -1,8 +1,10 @@
-const CategoryFinished = ({ score, setCategoryFinished }) => {
+const CategoryFinished = ({ score, setCategoryFinished, setGameFinished, setCategorySelected }) => {
 
   // TODO: use the correct function
   const handleClickOkButton = () => {
     setCategoryFinished(true)
+    setGameFinished(true)
+    setCategorySelected('')
   }
 
   return (

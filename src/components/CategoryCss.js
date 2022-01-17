@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import questions from '../data/questionsCSS'
-import WrongAnswer from '../components/WrongAnswer';
+import WrongAnswer from './WrongAnswer';
 import CategoryFinished from './CategoryFinished';
 import Retry from './Retry';
+import CategoriesSection from './Categories';
 
 
-const CategoryCss = ({ onChange, score, categorySelected }) => {
+
+const CategoryCss = ({ onChange, score, categorySelected, setCategorySelected }) => {
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [gameFinished, setGameFinished] = useState(false);
@@ -23,12 +25,12 @@ const CategoryCss = ({ onChange, score, categorySelected }) => {
     if(currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      setGameFinished(true)
+      setCategoryFinished(true)
     }
   }
 
   const handleClickRetryButton = () => {
-    setCategoryFinished(true)
+    setGameFinished(true)
     setRetry(true)
     setCurrentQuestion(0)
   }
@@ -39,26 +41,15 @@ const CategoryCss = ({ onChange, score, categorySelected }) => {
   console.log('retry:', retry);
   console.log('------------------------------------------------');
 
-  // TODO: No borrar aun
-  // ⬇ ya tengo esta funcion en el componente Retry
-  // const handleClickTryAgainButton = () => {
-  //   setRetry(false)
-  //   setCategoryFinished(true);
-  //   console.log('setCategoryFinished:', categoryFinished);
-  // }
-
-  // const newF = () => {
-  //   setGameFinished(true);
-  // }
 
 
   return (
     <>
-      { gameFinished === false && retry === false && wrongAnswer === false ?
+      { gameFinished === false && retry === false && wrongAnswer === false && categoryFinished === false ?
         (
           <>
             <div className="questions-head">
-              <h3>Categoria <span>{categorySelected}</span></h3>
+              <h3>Categoria <span>{categorySelected.toUpperCase()}</span></h3>
               <div className="question-count">Pregunta numero: <span>{currentQuestion + 1}</span> de {questions.length}</div>
             </div>
             <div className="question-text"> <span>{currentQuestion + 1}.</span> {questions[currentQuestion].questionText}</div>
@@ -80,22 +71,25 @@ const CategoryCss = ({ onChange, score, categorySelected }) => {
         )
       }
       { wrongAnswer === true ? <WrongAnswer score={score} /> : null }
-      { retry === true && categoryFinished === true
+      { retry === true && gameFinished === true
         ? <Retry 
             score={score}
-            // // TODO: No borrar aun ⬇ ya tengo esta funcion en el componente Retry 
-            // handleClickTryAgainButton={handleClickTryAgainButton}
           />
         : null
       }
-      { gameFinished === true 
+      { categoryFinished === true && gameFinished === false
         ? <CategoryFinished // respuestas correctas
             score={score}
-            categoryFinished={categoryFinished} 
+            setGameFinished={setGameFinished} 
             setCategoryFinished={setCategoryFinished}
+            setCategorySelected={setCategorySelected}
           />
         : null
       }
+      { categoryFinished === true && gameFinished === true
+        ? <CategoriesSection />
+        : null
+      } 
     </>
   );
 }

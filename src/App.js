@@ -9,6 +9,8 @@ import CategoryJavascript from "./components/CategoryJavascript";
 function App() {
 
   const [categorySelected, setCategorySelected] = useState('')
+  const [classNameValue, setClassNameValue] = useState('')
+
   const [score, setScore] = useState(0.0000)
 
   const handleChangeScore = () => {
@@ -17,7 +19,12 @@ function App() {
 
   const handleClickButton = (category) => {
     setCategorySelected(category)
+    setClassNameValue(category)
   }
+
+  console.log('[app.js] categorySelected:', categorySelected);
+  console.log('[app.js] classNameValue:', classNameValue);
+
 
   return (
     <div className="App">
@@ -25,17 +32,19 @@ function App() {
         <h2>Concurso de preguntas y respuestas</h2>
         {categorySelected === ''
           ? <CategoriesSection 
-              handleClickButton={handleClickButton} 
+              handleClickButton={handleClickButton}
+              classNameValue={classNameValue} 
             />
           : null
         }
-        {categorySelected === 'CSS'
+        {categorySelected === 'css'
           ? <>
             <Score score={score} />
             <CategoryCss
               onChange={handleChangeScore}
               score={score}
               categorySelected={categorySelected}
+              setCategorySelected={setCategorySelected}
             />
           </>
           : null

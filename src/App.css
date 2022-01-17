@@ -53,6 +53,11 @@
   color: #282c34;
 }
 
+.categ-container .css-btn {
+  display: none;
+}
+
+
 .score-count {
   color: whitesmoke;
   font-size: 1.2rem;

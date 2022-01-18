@@ -3,9 +3,11 @@ import questions from "../data/questionsJavascript";
 import WrongAnswer from '../components/WrongAnswer';
 import CategoryFinished from './CategoryFinished';
 import Retry from './Retry';
+import CategoriesSection from './Categories';
 
 
-const CategoryJavascript = ({ onChange, score, categorySelected }) => {
+
+const CategoryJavascript = ({ onChange, score, categorySelected, setCategorySelected }) => {
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [gameFinished, setGameFinished] = useState(false);
@@ -23,7 +25,7 @@ const CategoryJavascript = ({ onChange, score, categorySelected }) => {
     if(currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      setGameFinished(true)
+      setCategoryFinished(true)
     }
   }
 
@@ -33,15 +35,15 @@ const CategoryJavascript = ({ onChange, score, categorySelected }) => {
     setCurrentQuestion(0)
   }
 
-
+  
   return (
     
     <>
-      { gameFinished === false && retry === false && wrongAnswer === false ?
+      { gameFinished === false && retry === false && wrongAnswer === false && categoryFinished === false ?
         (
           <>
             <div className="questions-head">
-              <h3>Categoria <span>{categorySelected}</span></h3>
+              <h3>Categoria <span>{categorySelected.toUpperCase()}</span></h3>
               <div className="question-count">Pregunta numero: <span>{currentQuestion + 1}</span> de {questions.length}</div>
             </div>
             <div className="question-text"> <span>{currentQuestion + 1}.</span> {questions[currentQuestion].questionText}</div>
@@ -62,18 +64,23 @@ const CategoryJavascript = ({ onChange, score, categorySelected }) => {
         ) 
       }
       { wrongAnswer === true ? <WrongAnswer score={score} /> : null }
-      { retry === true 
+      { retry === true && gameFinished === true
         ? <Retry 
             score={score}
           />
         : null
       }
-      { gameFinished === true 
+      { categoryFinished === true && gameFinished === false
         ? <CategoryFinished // respuestas correctas
             score={score}
-            categoryFinished={categoryFinished} 
+            setGameFinished={setGameFinished} 
             setCategoryFinished={setCategoryFinished}
+            setCategorySelected={setCategorySelected}
           />
+        : null
+      }
+      { categoryFinished === true && gameFinished === true
+        ? <CategoriesSection />
         : null
       }
     </>

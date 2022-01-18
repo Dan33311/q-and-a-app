@@ -9,7 +9,7 @@ import CategoryJavascript from "./components/CategoryJavascript";
 function App() {
 
   const [categorySelected, setCategorySelected] = useState('')
-  const [classNameValue, setClassNameValue] = useState('')
+  const [classNameValue, setClassNameValue] = useState([])
 
   const [score, setScore] = useState(0.0000)
 
@@ -18,9 +18,21 @@ function App() {
   }
 
   const handleClickButton = (category) => {
+    console.log('category:', category);
     setCategorySelected(category)
-    setClassNameValue(category)
+    setClassNameValue([...classNameValue, category])
   }
+
+  // const handleClickJsButton = (category) => {
+  //   setTimeout(() => {
+  //     console.log('classNameValue:', classNameValue);
+  //   }, 7000)
+  //   setTimeout(() => {
+  //     console.log('category:', category);
+  //   }, 5000)
+  //   setCategorySelected(category)
+  //   setClassNameValue([...classNameValue, category])
+  // }
 
   console.log('[app.js] categorySelected:', categorySelected);
   console.log('[app.js] classNameValue:', classNameValue);
@@ -49,13 +61,14 @@ function App() {
           </>
           : null
         }
-        {categorySelected === 'JavaScript'
+        {categorySelected === 'javascript'
           ? <>
             <Score score={score} />
             <CategoryJavascript
               onChange={handleChangeScore}
               score={score}
               categorySelected={categorySelected}
+              setCategorySelected={setCategorySelected}
             />
           </>
           : null

@@ -56,7 +56,9 @@
 .categ-container .css-btn {
   display: none;
 }
-
+.categ-container .javascript-btn {
+  display: none;
+}
 
 .score-count {
   color: whitesmoke;

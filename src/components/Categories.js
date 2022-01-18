@@ -10,10 +10,13 @@ const CategoriesSection = ({ handleClickButton, handleClickCssButton, classNameV
         {/* <button className="categ-btn" onClick={() => handleClickJsButton('javascript')}>JavaScript</button> */}
         <button className={`categ-btn ${classNameValue[0]}-btn`} onClick={() => handleClickButton('css')}>CSS</button>
         <button className={`categ-btn ${classNameValue[1]}-btn`} onClick={() => handleClickButton('javascript')}>JavaScript</button>
-        <button className="categ-btn">Categoria</button>
-        <button className="categ-btn">Categoria</button>
-        <button className="categ-btn">Categoria</button>
-        <button className="categ-btn">Categoria</button>
+        <button className="categ-btn">-</button>
+        <button className="categ-btn">-</button>
+        <button className="categ-btn">-</button>
+        <button className="categ-btn">-</button>
+        <button className="categ-btn">-</button>
+        <button className="categ-btn">-</button>
+        <button className="categ-btn">-</button>
       </div>
     </>
   );

@@ -6,7 +6,6 @@ import Retry from './Retry';
 import CategoriesSection from './Categories';
 
 
-
 const CategoryJavascript = ({ onChange, score, categorySelected, setCategorySelected }) => {
 
   const [currentQuestion, setCurrentQuestion] = useState(0);

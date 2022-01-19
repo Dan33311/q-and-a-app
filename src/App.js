@@ -8,34 +8,29 @@ import CategoryJavascript from "./components/CategoryJavascript";
 
 function App() {
 
-  const [categorySelected, setCategorySelected] = useState('')
-  const [classNameValue, setClassNameValue] = useState([])
+  const [categories, setCategories] = useState([
+    'CSS',
+    'JavaScript', 
+    'HTML', 
+    'Bootstrap', 
+    'React', 
+    'Firebase', 
+    'Nodejs'
+  ])
 
+  const [categorySelected, setCategorySelected] = useState('')
   const [score, setScore] = useState(0.0000)
 
   const handleChangeScore = () => {
     setScore(score + 0.0001)
   }
 
-  const handleClickButton = (category) => {
-    console.log('category:', category);
-    setCategorySelected(category)
-    setClassNameValue([...classNameValue, category])
+  const handleClickButton = (category, index) => {
+    setCategorySelected((prev) => category)
+    let newCategory = categories
+    newCategory.splice(index, 1)
+    setCategories((prev) => newCategory)
   }
-
-  // const handleClickJsButton = (category) => {
-  //   setTimeout(() => {
-  //     console.log('classNameValue:', classNameValue);
-  //   }, 7000)
-  //   setTimeout(() => {
-  //     console.log('category:', category);
-  //   }, 5000)
-  //   setCategorySelected(category)
-  //   setClassNameValue([...classNameValue, category])
-  // }
-
-  console.log('[app.js] categorySelected:', categorySelected);
-  console.log('[app.js] classNameValue:', classNameValue);
 
 
   return (
@@ -44,12 +39,12 @@ function App() {
         <h2>Concurso de preguntas y respuestas</h2>
         {categorySelected === ''
           ? <CategoriesSection 
+              categories={categories}
               handleClickButton={handleClickButton}
-              classNameValue={classNameValue} 
             />
           : null
         }
-        {categorySelected === 'css'
+        {categorySelected === 'CSS'
           ? <>
             <Score score={score} />
             <CategoryCss
@@ -61,7 +56,7 @@ function App() {
           </>
           : null
         }
-        {categorySelected === 'javascript'
+        {categorySelected === 'JavaScript'
           ? <>
             <Score score={score} />
             <CategoryJavascript

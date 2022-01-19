@@ -6,7 +6,6 @@ import Retry from './Retry';
 import CategoriesSection from './Categories';
 
 
-
 const CategoryCss = ({ onChange, score, categorySelected, setCategorySelected }) => {
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -40,7 +39,6 @@ const CategoryCss = ({ onChange, score, categorySelected, setCategorySelected })
   console.log('categoryFinished:', categoryFinished);
   console.log('retry:', retry);
   console.log('------------------------------------------------');
-
 
 
   return (
@@ -93,7 +91,6 @@ const CategoryCss = ({ onChange, score, categorySelected, setCategorySelected })
     </>
   );
 }
-
 
 
 export default CategoryCss;

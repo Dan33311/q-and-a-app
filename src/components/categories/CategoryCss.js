@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import questions from '../data/questionsCSS'
-import WrongAnswer from './WrongAnswer';
-import CategoryFinished from './CategoryFinished';
-import Retry from './Retry';
-import CategoriesSection from './Categories';
+import questions from '../../data/questionsCSS'
+import CategoriesSection from '../CategoriesSection';
+import WrongAnswer from '../WrongAnswer';
+import Retry from '../Retry';
+import CategoryFinished from '../CategoryFinished';
 
 
 const CategoryCss = ({ onChange, score, categorySelected, setCategorySelected }) => {

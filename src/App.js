@@ -1,16 +1,16 @@
 import './App.css';
 import { useState } from "react";
-import CategoriesSection from './components/Categories';
 import Score from "./components/Score";
-import CategoryCss from "./components/CategoryCss";
-import CategoryJavascript from "./components/CategoryJavascript";
-import CategoryFood from './components/CategoryFood';
-import CategoryMoviesAndTV from './components/CategoryMoviesAndTV';
-import CategoryMusic from './components/CategoryMusic';
-import CategoryGeography from './components/CategoryGeography';
-import CategoryArtAndLiterature from './components/CategoryArtAndLiterature';
-import CategoryScience from './components/CategoryScience';
-import CategorySports from './components/CategorySports';
+import CategoriesSection from './components/CategoriesSection';
+import CategoryCss from "./components/categories/CategoryCss";
+import CategoryJavascript from "./components/categories/CategoryJavascript";
+import CategoryFood from './components/categories/CategoryFood';
+import CategoryMoviesAndTV from './components/categories/CategoryMoviesAndTV';
+import CategoryMusic from './components/categories/CategoryMusic';
+import CategoryGeography from './components/categories/CategoryGeography';
+import CategoryArtAndLiterature from './components/categories/CategoryArtAndLiterature';
+import CategoryScience from './components/categories/CategoryScience';
+import CategorySports from './components/categories/CategorySports';
 
 
 function App() {
@@ -47,10 +47,13 @@ function App() {
       <>
         <h2>Concurso de preguntas y respuestas</h2>
         {categorySelected === ''
-          ? <CategoriesSection 
-              categories={categories}
-              handleClickButton={handleClickButton}
-            />
+          ? <>
+              <CategoriesSection 
+                categories={categories}
+                handleClickButton={handleClickButton}
+              />
+              <Score score={score} />
+            </>
           : null
         }
         {categorySelected === 'CSS'

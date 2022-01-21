@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import questions from "../data/questionsJavascript";
-import WrongAnswer from '../components/WrongAnswer';
-import CategoryFinished from './CategoryFinished';
-import Retry from './Retry';
-import CategoriesSection from './Categories';
+import questions from '../../data/questionsMoviesAndTV'
+import CategoriesSection from '../CategoriesSection';
+import WrongAnswer from '../WrongAnswer';
+import Retry from '../Retry';
+import CategoryFinished from '../CategoryFinished';
 
 
-const CategoryJavascript = ({ onChange, score, categorySelected, setCategorySelected }) => {
+const CategoryMovies = ({ onChange, score, categorySelected, setCategorySelected }) => {
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [gameFinished, setGameFinished] = useState(false);
@@ -17,7 +17,7 @@ const CategoryJavascript = ({ onChange, score, categorySelected, setCategorySele
 
   const handleAnswerClick = (isCorrect) => {
     if(isCorrect === true) {
-      onChange();
+      onChange(); // if correct answer -> increase the score
     } else {
       setWrongAnswer(true)
     }
@@ -29,14 +29,19 @@ const CategoryJavascript = ({ onChange, score, categorySelected, setCategorySele
   }
 
   const handleClickRetryButton = () => {
-    setCategoryFinished(true)
+    setGameFinished(true)
     setRetry(true)
     setCurrentQuestion(0)
   }
 
-  
+  console.log('gameFinished:', gameFinished);
+  console.log('wrongAnswer:', wrongAnswer);
+  console.log('categoryFinished:', categoryFinished);
+  console.log('retry:', retry);
+  console.log('------------------------------------------------');
+
+
   return (
-    
     <>
       { gameFinished === false && retry === false && wrongAnswer === false && categoryFinished === false ?
         (
@@ -46,7 +51,7 @@ const CategoryJavascript = ({ onChange, score, categorySelected, setCategorySele
               <div className="question-count">Pregunta numero: <span>{currentQuestion + 1}</span> de {questions.length}</div>
             </div>
             <div className="question-text"> <span>{currentQuestion + 1}.</span> {questions[currentQuestion].questionText}</div>
-            <div className="answer-options" >
+            <div className="answer-options">
               <p>** Solo se puede selecionar la respuesta que creas correcta una vez.</p>
               {questions[currentQuestion].answersOptions.map( (answerOption, index) => (
                 <div className="answers-btn" key={index}>
@@ -60,7 +65,8 @@ const CategoryJavascript = ({ onChange, score, categorySelected, setCategorySele
           </>
         ) : (
           null
-        ) 
+          
+        )
       }
       { wrongAnswer === true ? <WrongAnswer score={score} /> : null }
       { retry === true && gameFinished === true
@@ -81,9 +87,10 @@ const CategoryJavascript = ({ onChange, score, categorySelected, setCategorySele
       { categoryFinished === true && gameFinished === true
         ? <CategoriesSection />
         : null
-      }
+      } 
     </>
   );
 }
 
-export default CategoryJavascript;
+
+export default CategoryMovies;

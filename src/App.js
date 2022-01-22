@@ -2,8 +2,6 @@ import './App.css';
 import { useState } from "react";
 import Score from "./components/Score";
 import CategoriesSection from './components/CategoriesSection';
-import CategoryCss from "./components/categories/CategoryCss";
-import CategoryJavascript from "./components/categories/CategoryJavascript";
 import CategoryFood from './components/categories/CategoryFood';
 import CategoryMoviesAndTV from './components/categories/CategoryMoviesAndTV';
 import CategoryMusic from './components/categories/CategoryMusic';
@@ -15,9 +13,7 @@ import CategorySports from './components/categories/CategorySports';
 
 function App() {
 
-  const [categories, setCategories] = useState([
-    'CSS',
-    'JavaScript', 
+  const [categories, setCategories] = useState([ 
     'Comida', 
     'Peliculas', 
     'Musica', 
@@ -54,30 +50,6 @@ function App() {
               />
               <Score score={score} />
             </>
-          : null
-        }
-        {categorySelected === 'CSS'
-          ? <>
-            <Score score={score} />
-            <CategoryCss
-              onChange={handleChangeScore}
-              score={score}
-              categorySelected={categorySelected}
-              setCategorySelected={setCategorySelected}
-            />
-          </>
-          : null
-        }
-        {categorySelected === 'JavaScript'
-          ? <>
-            <Score score={score} />
-            <CategoryJavascript
-              onChange={handleChangeScore}
-              score={score}
-              categorySelected={categorySelected}
-              setCategorySelected={setCategorySelected}
-            />
-          </>
           : null
         }
         {categorySelected === 'Comida'

@@ -3,7 +3,7 @@
 
 Este proyecto fue creado con [Create React App](https://github.com/facebook/create-react-app).
 
-## Instacion
+## Instalacion
 ***
 Puedes clonar este proyecto en tu computador. 
 ```

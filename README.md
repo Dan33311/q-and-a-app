@@ -1,9 +1,9 @@
 # Aplicacion de preguntas y respuestas
 ***
-
 Este proyecto fue creado con [Create React App](https://github.com/facebook/create-react-app).
 
-## Instalacion
+
+## Instalación
 ***
 Puedes clonar este proyecto en tu computador. 
 ```

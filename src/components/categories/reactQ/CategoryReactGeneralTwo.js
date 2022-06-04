@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import questions from '../../data/questionsScience'
-import CategoriesSection from '../CategoriesSection';
-import WrongAnswer from '../WrongAnswer';
-import Retry from '../Retry';
-import CategoryFinished from '../CategoryFinished';
+import questions from '../../../data/reactQ/generalBQuestions'
+import CategoriesSection from '../../CategoriesSection';
+import WrongAnswer from '../../WrongAnswer';
+import Retry from '../../Retry';
+import CategoryFinished from '../../CategoryFinished';
 
 
-const CategoryScience = ({ onChange, score, categorySelected, setCategorySelected }) => {
+const CategoryReactGeneralTwo = ({ onChange, score, categorySelected, setCategorySelected }) => {
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [gameFinished, setGameFinished] = useState(false);
@@ -93,4 +93,4 @@ const CategoryScience = ({ onChange, score, categorySelected, setCategorySelecte
 }
 
 
-export default CategoryScience;
+export default CategoryReactGeneralTwo;

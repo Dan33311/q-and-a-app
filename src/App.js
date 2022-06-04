@@ -2,25 +2,28 @@ import './App.css';
 import { useState } from "react";
 import Score from "./components/Score";
 import CategoriesSection from './components/CategoriesSection';
-import CategoryFood from './components/categories/CategoryFood';
-import CategoryMoviesAndTV from './components/categories/CategoryMoviesAndTV';
-import CategoryMusic from './components/categories/CategoryMusic';
-import CategoryGeography from './components/categories/CategoryGeography';
-import CategoryArtAndLiterature from './components/categories/CategoryArtAndLiterature';
-import CategoryScience from './components/categories/CategoryScience';
-import CategorySports from './components/categories/CategorySports';
+import CategoryReactGeneralOne from './components/categories/reactQ/CategoryReactGeneralOne'
+import CategoryReactGeneralTwo from './components/categories/reactQ/CategoryReactGeneralTwo'
+import CategoryCompanyInfo from './components/categories/reactQ/CategoryCompanyInfo'
+import CategoryComponent from './components/categories/reactQ/CategoryComponent'
+import CategoryDOM from './components/categories/reactQ/CategoryDOM'
+import CategoryLifecycleAndRender from './components/categories/reactQ/CategoryLifecycleAndRender'
+import CategoryPropsAndData from './components/categories/reactQ/CategoryPropsAndData'
+import CategoryState from './components/categories/reactQ/CategoryState'
+
 
 
 function App() {
 
   const [categories, setCategories] = useState([ 
-    'Comida', 
-    'Peliculas', 
-    'Musica', 
-    'Geografia', 
-    'Arte',
-    'Ciencia',
-    'Deportes'
+    'General 1',
+    'General 2',
+    'Company',
+    'Component',
+    'DOM',
+    'Lifecycle/Render',
+    'Props and Data',
+    'State',
   ])
 
   const [categorySelected, setCategorySelected] = useState('')
@@ -52,89 +55,96 @@ function App() {
             </>
           : null
         }
-        {categorySelected === 'Comida'
-          ? <>
+
+        {categorySelected === 'General 1' && 
+          <>
             <Score score={score} />
-            <CategoryFood
+            <CategoryReactGeneralOne
               onChange={handleChangeScore}
               score={score}
               categorySelected={categorySelected}
               setCategorySelected={setCategorySelected}
             />
           </>
-          : null
         }
-        {categorySelected === 'Peliculas'
-          ? <>
+        {categorySelected === 'General 2' && 
+          <>
             <Score score={score} />
-            <CategoryMoviesAndTV
+            <CategoryReactGeneralTwo
               onChange={handleChangeScore}
               score={score}
               categorySelected={categorySelected}
               setCategorySelected={setCategorySelected}
             />
           </>
-          : null
         }
-        {categorySelected === 'Musica'
-          ? <>
+        {categorySelected === 'Company' && 
+          <>
             <Score score={score} />
-            <CategoryMusic
+            <CategoryCompanyInfo
               onChange={handleChangeScore}
               score={score}
               categorySelected={categorySelected}
               setCategorySelected={setCategorySelected}
             />
           </>
-          : null
         }
-        {categorySelected === 'Geografia'
-          ? <>
+        {categorySelected === 'Component' && 
+          <>
             <Score score={score} />
-            <CategoryGeography
+            <CategoryComponent
               onChange={handleChangeScore}
               score={score}
               categorySelected={categorySelected}
               setCategorySelected={setCategorySelected}
             />
           </>
-          : null
         }
-        {categorySelected === 'Arte'
-          ? <>
+
+
+        {categorySelected === 'DOM' && 
+          <>
             <Score score={score} />
-            <CategoryArtAndLiterature
+            <CategoryDOM
               onChange={handleChangeScore}
               score={score}
               categorySelected={categorySelected}
               setCategorySelected={setCategorySelected}
             />
           </>
-          : null
         }
-        {categorySelected === 'Ciencia'
-          ? <>
+        {categorySelected === 'Lifecycle/Render' && 
+          <>
             <Score score={score} />
-            <CategoryScience
+            <CategoryLifecycleAndRender
               onChange={handleChangeScore}
               score={score}
               categorySelected={categorySelected}
               setCategorySelected={setCategorySelected}
             />
           </>
-          : null
         }
-        {categorySelected === 'Deportes'
-          ? <>
+        {categorySelected === 'Props and Data' && 
+          <>
             <Score score={score} />
-            <CategorySports
+            <CategoryPropsAndData
               onChange={handleChangeScore}
               score={score}
               categorySelected={categorySelected}
               setCategorySelected={setCategorySelected}
             />
           </>
-          : null
+        }
+        {categorySelected === 'State' && 
+          <>
+            <Score score={score} />
+            <CategoryState
+              onChange={handleChangeScore}
+              score={score}
+              categorySelected={categorySelected}
+              setCategorySelected={setCategorySelected}
+            />
+          </>
         }
       </>
     </div>

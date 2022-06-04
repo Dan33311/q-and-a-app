@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import questions from '../../data/questionsGeography'
-import CategoriesSection from '../CategoriesSection';
-import WrongAnswer from '../WrongAnswer';
-import Retry from '../Retry';
-import CategoryFinished from '../CategoryFinished';
+import questions from '../../../data/reactQ/componentQuestions'
+import CategoriesSection from '../../CategoriesSection';
+import WrongAnswer from '../../WrongAnswer';
+import Retry from '../../Retry';
+import CategoryFinished from '../../CategoryFinished';
 
 
-const CategoryGeography = ({ onChange, score, categorySelected, setCategorySelected }) => {
+const CategoryComponent = ({ onChange, score, categorySelected, setCategorySelected }) => {
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [gameFinished, setGameFinished] = useState(false);
@@ -93,4 +93,4 @@ const CategoryGeography = ({ onChange, score, categorySelected, setCategorySelec
 }
 
 
-export default CategoryGeography;
+export default CategoryComponent;

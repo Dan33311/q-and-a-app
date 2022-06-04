@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import questions from '../../data/questionsSports'
-import CategoriesSection from '../CategoriesSection';
-import WrongAnswer from '../WrongAnswer';
-import Retry from '../Retry';
-import CategoryFinished from '../CategoryFinished';
+import questions from '../../../data/reactQ/domQuestions'
+import CategoriesSection from '../../CategoriesSection';
+import WrongAnswer from '../../WrongAnswer';
+import Retry from '../../Retry';
+import CategoryFinished from '../../CategoryFinished';
 
 
-const CategorySports = ({ onChange, score, categorySelected, setCategorySelected }) => {
+const CategoryDOM = ({ onChange, score, categorySelected, setCategorySelected }) => {
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [gameFinished, setGameFinished] = useState(false);
@@ -93,4 +93,4 @@ const CategorySports = ({ onChange, score, categorySelected, setCategorySelected
 }
 
 
-export default CategorySports;
+export default CategoryDOM;

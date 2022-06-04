@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import questions from '../../data/questionsFoodAndDrink'
-import CategoriesSection from '../CategoriesSection';
-import WrongAnswer from '../WrongAnswer';
-import Retry from '../Retry';
-import CategoryFinished from '../CategoryFinished';
+import questions from '../../../data/reactQ/generalAQuestions'
+import CategoriesSection from '../../CategoriesSection';
+import WrongAnswer from '../../WrongAnswer';
+import Retry from '../../Retry';
+import CategoryFinished from '../../CategoryFinished';
 
 
-const CategoryFood = ({ onChange, score, categorySelected, setCategorySelected }) => {
+const CategoryReactGeneralOne = ({ onChange, score, categorySelected, setCategorySelected }) => {
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [gameFinished, setGameFinished] = useState(false);
@@ -93,4 +93,4 @@ const CategoryFood = ({ onChange, score, categorySelected, setCategorySelected }
 }
 
 
-export default CategoryFood;
+export default CategoryReactGeneralOne;

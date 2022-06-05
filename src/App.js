@@ -21,7 +21,7 @@ function App() {
     'Company',
     'Component',
     'DOM',
-    'Lifecycle/Render',
+    'Lifecycle and Render',
     'Props and Data',
     'State',
   ])
@@ -44,7 +44,7 @@ function App() {
   return (
     <div className="App">
       <>
-        <h2>Concurso de preguntas y respuestas</h2>
+        <h2>React Quiz</h2>
         {categorySelected === ''
           ? <>
               <CategoriesSection 
@@ -113,7 +113,7 @@ function App() {
             />
           </>
         }
-        {categorySelected === 'Lifecycle/Render' && 
+        {categorySelected === 'Lifecycle and Render' && 
           <>
             <Score score={score} />
             <CategoryLifecycleAndRender

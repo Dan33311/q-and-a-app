@@ -47,12 +47,12 @@ const CategoryCompanyInfo = ({ onChange, score, categorySelected, setCategorySel
         (
           <>
             <div className="questions-head">
-              <h3>Categoria <span>{categorySelected.toUpperCase()}</span></h3>
-              <div className="question-count">Pregunta numero: <span>{currentQuestion + 1}</span> de {questions.length}</div>
+              <h3>Category <span>{categorySelected.toUpperCase()}</span></h3>
+              <div className="question-count">Question number: <span>{currentQuestion + 1}</span> of  {questions.length}</div>
             </div>
             <div className="question-text"> <span>{currentQuestion + 1}.</span> {questions[currentQuestion].questionText}</div>
             <div className="answer-options">
-              <p>** Solo se puede selecionar la respuesta que creas correcta una vez.</p>
+              <p>** You can only select once the answer you think is correct. </p>
               {questions[currentQuestion].answersOptions.map( (answerOption, index) => (
                 <div className="answers-btn" key={index}>
                   <button onClick={() => {handleAnswerClick(answerOption.isCorrect)}}>{answerOption.answerText}</button>
@@ -60,7 +60,7 @@ const CategoryCompanyInfo = ({ onChange, score, categorySelected, setCategorySel
               ))}
             </div>
             <div className="retry-btn">
-              <button onClick={() => handleClickRetryButton()}>Retirarse</button>
+              <button onClick={() => handleClickRetryButton()}>Walk away</button>
             </div> 
           </>
         ) : (

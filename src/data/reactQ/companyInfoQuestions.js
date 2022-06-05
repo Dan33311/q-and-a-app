@@ -23,8 +23,8 @@ const companyInfoQuestions = [
     questionId: 3,
     questionText : "Company using React.js",
     answersOptions: [
-      { answerText: "All of these", isCorrect: false },
-      { answerText: "Airnbnb", isCorrect: true },
+      { answerText: "All of these", isCorrect: true },
+      { answerText: "Airnbnb", isCorrect: false },
       { answerText: "DropBox", isCorrect: false },
       { answerText: "Discord", isCorrect: false },
     ]

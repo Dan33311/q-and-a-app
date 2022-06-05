@@ -9,9 +9,9 @@ const CategoryFinished = ({ score, setCategoryFinished, setGameFinished, setCate
 
   return (
     <div className='wrong-answer game-finished'>
-      <h4>✅ Respuestas correctas !</h4>
-      <p>Has ganado: 💳 <span>{ score }</span> BTC</p>
-      <p>Porfavor seleccione una nueva categoria</p>
+      <h4>✅ Correct answers !</h4>
+      <p>You have won: 💳 <span>{ score }</span> BTC</p>
+      <p>Please select a new category</p>
       <button className="green-btn" onClick={() => handleClickOkButton()}>OK</button>
     </div>
   );

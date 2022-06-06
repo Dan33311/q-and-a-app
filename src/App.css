@@ -25,6 +25,12 @@
   margin-top: 40px;
   /* outline: 1px solid lime; */
 }
+.App .description{
+  color: whitesmoke;
+}
+.App h4 {
+  color: whitesmoke;
+}
 
 .categ-container {
   margin-top: 60px;

@@ -1,10 +1,16 @@
 .App {
-  margin-top: 0px;
+  margin: 0;
+  padding: 0;
   background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  box-sizing: border-box;
+  /* outline: 1px solid salmon; */
 }
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -13,23 +19,34 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
+} */
 
 .App h2 {
   color: whitesmoke;
   margin: 20px;
-  margin-top: 40px;
+  margin-top: 120px;
+
   /* outline: 1px solid lime; */
 }
 .App .description{
+  align-items: center;
   color: whitesmoke;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: start;
 }
-.App h4 {
+.app-details {
+  max-width: 1040px;
+  /* outline: 1px solid salmon; */
+}
+.app-details h3 {
   color: whitesmoke;
+  margin-top: 40px;
+  text-align: start;
+  margin-left: 40px;
+}
+.app-details button {
+  margin-top: 40px;
 }
 
 .categ-container {
@@ -67,9 +84,9 @@
 
 
 .score-count {
+  width: 1040px;
   color: whitesmoke;
   font-size: 1.2rem;
-  margin: 40px 60px 20px 20px;
 
   /* borrar despues */
   /* outline: 1px solid lime; */
@@ -100,9 +117,7 @@
   color: #61dafb;
 }
 .question-text {
-  margin: 10px 50px 20px 50px;
-  padding: 50px;
-  border: 4px solid #61dafb;
+  margin: 40px 0 30px 0;
   border-radius: 6px;
   color: whitesmoke;
 }
@@ -111,18 +126,10 @@
 }
 
 
-.answer-options {
-  margin: 0px 50px 30px 50px;
-  padding: 50px;
-  border: 4px solid #61dafb;
-  border-radius: 6px;
+.answer-options{
+  min-width: 600px;
 }
-.answer-options p {
-  color: whitesmoke;
-  text-align: start;
-  margin-top: -30px;
-  font-size: 14px;
-}
+
 .answers-btn button {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   color: rgba(245, 245, 245, 0.959);
@@ -138,14 +145,15 @@
   color: #282c34;
 }
 
-
+.retry-btn{
+  margin-top: 60px;
+}
 .retry-btn button {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   color: #ff6961;
   background-color: #282c34;
   border: 3px solid #ff6961;
   border-radius: 6px;
-  margin: 10px 50px 20px 50px;
   padding: 10px 100px;
 }
 .retry-btn:hover button {
@@ -159,10 +167,9 @@
   /* max-width: 300px; */
   padding: 40px 30px 60px;
   margin: 50px auto;
-  border: 4px solid #ff6961;
+  border: 1px solid #ff6961;
   border-radius: 6px;
-  max-width: 600px;
-  /* outline: 3px solid #ff6961; */
+  min-width: 600px;  /* outline: 3px solid #ff6961; */
 }
 .wrong-answer p {
   margin-top: 40px;
@@ -178,11 +185,13 @@
 }
 
 .retry-section {
-  border: 4px solid #efa94a;
+  min-width: 600px;
+  border: 1px solid #efa94a;
 }
 
 .game-finished {
-  border: 4px solid #4aff4a;
+  border: 1px solid #4aff4a;
+  min-width: 600px;
 }
 .green-btn {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -197,4 +206,5 @@
 .green-btn:hover {
   background-color: #4aff4a;
   color: #282c34;
+  /* font-weight: 500; */
 }

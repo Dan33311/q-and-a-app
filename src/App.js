@@ -11,20 +11,21 @@ import CategoryDOM from './components/categories/reactQ/CategoryDOM'
 import CategoryLifecycleAndRender from './components/categories/reactQ/CategoryLifecycleAndRender'
 import CategoryPropsAndData from './components/categories/reactQ/CategoryPropsAndData'
 import CategoryState from './components/categories/reactQ/CategoryState'
+import Details from './components/AppDetails';
 
 
 
 function App() {
 
   const [categories, setCategories] = useState([ 
-    'General 1',
-    'General 2',
+    'General',
+    // 'General 2',
     'Company',
-    // 'Component',
-    // 'DOM',
-    // 'Lifecycle and Render',
-    // 'Props and Data',
-    // 'State',
+    'Component',
+    'DOM',
+    'Lifecycle and Render',
+    'Props and Data',
+    'State',
   ])
 
   const [categorySelected, setCategorySelected] = useState('')
@@ -52,18 +53,7 @@ function App() {
         <h2>ReactQuiz</h2>
 
         {!isPlaying &&
-          <>
-            <p className='description'>ReactQuiz, is a quiz competition where contestants have to correctly answer a series of multiple-choice questions in order to advance to the next category.</p>
-            <h4>How to play: </h4>
-            <p className='description'>Select a category from five available categories.</p>            
-            <p className='description'>Five questions per category, four multiple-choice answers.</p>
-            <p className='description'>Select one of the multiple-choice question.</p>
-            <p className='description'>You can only select once the answer you think is correct.</p>
-            <p className='description'>If the selected answer is correct, you will earn 0.0001 BTC and advance to the next question.</p>
-            <p className='description'>If the selected answer is incorrect, you will lose the accumulated BTC and the game will end.</p>
-            <p className='description'>You have the option to withdraw from the quiz at any time and take your accumulated BTC with you.</p>
-            <button className="green-btn" onClick={() => setIsPlaying(true)}>Play</button>
-          </>
+          <Details setIsPlaying={setIsPlaying} />
         }
         {isPlaying && categorySelected === ''
           ? <>
@@ -76,11 +66,11 @@ function App() {
                   </>
                 :
                   <>
-                  <Score score={score} />
-                  <CategoriesSection 
-                    categories={categories}
-                    handleClickButton={handleClickButton}
-                  />
+                    <Score score={score} />
+                    <CategoriesSection 
+                      categories={categories}
+                      handleClickButton={handleClickButton}
+                    />
                   </>
               }
             </>
@@ -88,7 +78,7 @@ function App() {
         }
         {/* {categories.length === 0 && <h1>Game finished</h1>} */}
 
-        {categorySelected === 'General 1' && 
+        {categorySelected === 'General' && 
           <>
             <Score score={score} />
             <CategoryReactGeneralOne

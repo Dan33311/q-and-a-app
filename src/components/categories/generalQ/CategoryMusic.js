@@ -52,7 +52,6 @@ const CategoryMusic = ({ onChange, score, categorySelected, setCategorySelected 
             </div>
             <div className="question-text"> <span>{currentQuestion + 1}.</span> {questions[currentQuestion].questionText}</div>
             <div className="answer-options">
-              <p>** You can only select once the answer you think is correct. </p>
               {questions[currentQuestion].answersOptions.map( (answerOption, index) => (
                 <div className="answers-btn" key={index}>
                   <button onClick={() => {handleAnswerClick(answerOption.isCorrect)}}>{answerOption.answerText}</button>

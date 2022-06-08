@@ -14,9 +14,9 @@ const domQuestions = [
     questionText : "JavaScript is used for DOM manipulation in React",
     answersOptions: [
       { answerText: "True", isCorrect: true },
-      { answerText: "false", isCorrect: false },
-      { answerText: "false", isCorrect: false },
-      { answerText: "true", isCorrect: false },
+      { answerText: "False", isCorrect: false },
+      { answerText: "False", isCorrect: false },
+      { answerText: "True", isCorrect: true },
     ]
   },
   {
@@ -33,19 +33,19 @@ const domQuestions = [
     questionId: 4,
     questionText : "What are the refs in React?",
     answersOptions: [
-      { answerText: "All of these", isCorrect: true },
       { answerText: "Managing focus, text selection, or media playback", isCorrect: false },
       { answerText: "Triggering imperative animations", isCorrect: false },
       { answerText: "Integrating with third-party DOM libraries", isCorrect: false },
+      { answerText: "All of these", isCorrect: true },
     ]
   },
   {
     questionId: 5,
     questionText : "Ref in React component is used to assign reference to DOM elements. Ref can be created by",
     answersOptions: [
-      { answerText: "Both of above", isCorrect: true },
       { answerText: "Calling React.createRef method", isCorrect: false },
       { answerText: "Assigning a value to ref attribute in JSX", isCorrect: false },
+      { answerText: "Both of above", isCorrect: true },
       { answerText: "None of above", isCorrect: false },
     ]
   },

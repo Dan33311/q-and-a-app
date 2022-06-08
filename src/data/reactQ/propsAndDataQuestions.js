@@ -3,8 +3,8 @@ const propsAndDataQuestions = [
     questionId: 1,
     questionText : "Which of the following is used to pass the data from parent to child",
     answersOptions: [
-      { answerText: "State", isCorrect: true },
       { answerText: "Propswrong", isCorrect: false },
+      { answerText: "State", isCorrect: true },
       { answerText: "Both of these", isCorrect: false },
       { answerText: "None", isCorrect: false },
     ]
@@ -13,9 +13,9 @@ const propsAndDataQuestions = [
     questionId: 2,
     questionText : "props in React can _______",
     answersOptions: [
-      { answerText: "Not be changed in the component", isCorrect: true },
       { answerText: "Be changed inside the component", isCorrect: false },
       { answerText: "Be changed in side other component", isCorrect: false },
+      { answerText: "Not be changed in the component", isCorrect: true },
       { answerText: "None of above", isCorrect: false },
     ]
   },
@@ -33,9 +33,9 @@ const propsAndDataQuestions = [
     questionId: 4,
     questionText : "What are two ways data gets handled in React?",
     answersOptions: [
-      { answerText: "state & props", isCorrect: true },
       { answerText: "services & components", isCorrect: false },
       { answerText: "state & services", isCorrect: false },
+      { answerText: "state & props", isCorrect: true },
       { answerText: "state & component", isCorrect: false },
     ]
   },
@@ -43,9 +43,9 @@ const propsAndDataQuestions = [
     questionId: 5,
     questionText : "In React, props can be used to pass",
     answersOptions: [
-      { answerText: "Both of above", isCorrect: true },
       { answerText: "Properties to the component", isCorrect: false },
       { answerText: "Event handler to component", isCorrect: false },
+      { answerText: "Both of above", isCorrect: true },
       { answerText: "None of above", isCorrect: false },
     ]
   },

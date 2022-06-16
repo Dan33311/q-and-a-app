@@ -39,11 +39,9 @@ function App() {
   const handleClickButton = (category, index) => {
     setCategorySelected((prev) => category)
     let newCategory = categories
-    console.log('>>> newCategory:', newCategory);
+    // TODO: Try using filter()
     newCategory.splice(index, 1)
-    console.log('>>> newCategory splice:', newCategory);
     setCategories((prev) => newCategory)
-    console.log('>>> categories:', categories);
   }
 
 
@@ -60,8 +58,6 @@ function App() {
               {categories.length === 0 
                 ? 
                   <>
-                    {/* <h1>Game finished</h1>
-                  <Score score={score} /> */}
                     <GameFinished score={score} />
                   </>
                 :
@@ -76,7 +72,6 @@ function App() {
             </>
           : null
         }
-        {/* {categories.length === 0 && <h1>Game finished</h1>} */}
 
         {categorySelected === 'General' && 
           <>

@@ -49,6 +49,73 @@
   margin-top: 40px;
 }
 
+
+
+/* NAVBAR ----------------------------------------------------------------- */
+.navbar{ /* navbar total height 179px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* max-width: 1306px; */
+  margin: 0 auto;
+  /* transition: all 0s ease; */
+  outline: solid 1px blueviolet;
+}
+.scrolled{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 1px 3px 5px #0099ff52;
+  background-color: rgb(255, 255, 255);
+  /* outline: solid 1px var(--color-light-blue); */
+}
+.nav-left{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: auto;
+  margin-top: 20px;
+  /* outline: solid 1px salmon; */
+}
+.nav-logo {
+  width: 159px;
+  height: 87px;
+  margin: -2px 40px 0px 99px;
+  /* outline: solid 1px lime; */
+}
+.navbar a{ /* all a (links) */
+  color: var(--color-light-blue);
+  font-family: 'D-DIN Exp', sans-serif;
+  /* font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px; */
+  text-decoration: none;
+  /* outline: solid 1px lime; */
+}
+.links{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 99px;
+  margin-top: 20px;
+  /* outline: solid 1px salmon; */
+}
+.links a:first-child{
+  margin-left: 11px;
+}
+.links a:nth-child(2){
+  margin-left: 61px;
+}
+.links a:nth-child(3){
+  margin-left: 61px;
+}
+
+
+
+
+
 .categ-container {
   margin-top: 60px;
   color: whitesmoke;

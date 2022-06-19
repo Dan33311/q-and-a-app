@@ -12,6 +12,7 @@ import CategoryLifecycleAndRender from './components/categories/reactQ/CategoryL
 import CategoryPropsAndData from './components/categories/reactQ/CategoryPropsAndData'
 import CategoryState from './components/categories/reactQ/CategoryState'
 import Details from './components/AppDetails';
+// import Navbar from './components/Navbar';
 
 
 
@@ -48,7 +49,8 @@ function App() {
   return (
     <div className="App">
       <>
-        <h2>ReactQuiz</h2>
+        <h2>QuizApp</h2>
+        {/* <Navbar /> */}
 
         {!isPlaying &&
           <Details setIsPlaying={setIsPlaying} />

@@ -34,8 +34,8 @@ const generalAQuestions = [
     questionText : "What are the advantages of React?",
     answersOptions: [
       { answerText: "Component and Data patterns improve readability", isCorrect: false },
-      { answerText: "Can be used with other frameworks also", isCorrect: false },
       { answerText: "Both of these", isCorrect: true },
+      { answerText: "Can be used with other frameworks also", isCorrect: false },
       { answerText: "None", isCorrect: false },
     ]
   },
@@ -44,9 +44,9 @@ const generalAQuestions = [
     questionText : "What are the limitations of React?",
     answersOptions: [
       { answerText: "React is only for view layer of the app so we still need the help of other technologies to get a complete tooling set for the development", isCorrect: false },
+      { answerText: "All of these", isCorrect: true },
       { answerText: "React is using inline templating and JSX. This can seem awkward to some developers", isCorrect: false },
       { answerText: "The library of react is too large", isCorrect: false },
-      { answerText: "All of these", isCorrect: true },
     ]
   },
 ]

@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Score from "./components/Score";
 import GameFinished from "./components/GameFinished"
 import CategoriesSection from './components/CategoriesSection';
@@ -32,9 +32,19 @@ function App() {
   const [categorySelected, setCategorySelected] = useState('')
   const [score, setScore] = useState(0)
   const [isPlaying, setIsPlaying] = useState(false)
+  const [endNumber, setEndNumber] = useState(301)
 
+  let i = score
   const handleChangeScore = () => {
-    setScore(score + 100)
+    setScore(score + 300)
+    if (i < endNumber) {
+      setScore(i)
+      setTimeout(() => {
+        handleChangeScore()
+        i++
+      }, 0)
+    }
+    setEndNumber(endNumber + 300)
   }
 
   const handleClickButton = (category, index) => {

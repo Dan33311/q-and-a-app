@@ -4,6 +4,7 @@ import CategoriesSection from '../../CategoriesSection';
 import WrongAnswer from '../../WrongAnswer';
 import Retry from '../../Retry';
 import CategoryFinished from '../../CategoryFinished';
+import audio from "../../../assets/winning-chimes-2015.wav"
 
 
 const CategoryReactGeneralOne = ({ onChange, score, categorySelected, setCategorySelected }) => {
@@ -17,6 +18,7 @@ const CategoryReactGeneralOne = ({ onChange, score, categorySelected, setCategor
 
   const handleAnswerClick = (isCorrect) => {
     if(isCorrect === true) {
+      new Audio(audio).play()
       onChange(); // if correct answer -> increase the score
     } else {
       setWrongAnswer(true)

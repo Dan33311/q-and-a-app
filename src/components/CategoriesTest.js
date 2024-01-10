@@ -22,6 +22,7 @@ const CategoriesTest = ({ categorySelected, setCategorySelected }) => {
       console.log("handleClickButton - categorySelected:", categorySelected);
       console.log("handleClickButton - index:", index);
       console.log('-------------------------------------------');
+      console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
     }, 3000)
     
   };

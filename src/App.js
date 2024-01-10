@@ -12,6 +12,7 @@ import CategoryLifecycleAndRender from './components/categories/reactQ/CategoryL
 import CategoryPropsAndData from './components/categories/reactQ/CategoryPropsAndData'
 import CategoryState from './components/categories/reactQ/CategoryState'
 import Details from './components/AppDetails';
+// import audio from "./assets/winning-chimes-2015.wav"
 // import Navbar from './components/Navbar';
 
 
@@ -34,9 +35,12 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(false)
   const [endNumber, setEndNumber] = useState(301)
 
+  
   let i = score
   const handleChangeScore = () => {
     setScore(score + 300)
+    // console.log("audio: ", new Audio(audio).play());
+    
     if (i < endNumber) {
       setScore(i)
       setTimeout(() => {

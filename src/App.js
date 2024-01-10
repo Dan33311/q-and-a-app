@@ -12,6 +12,7 @@ import CategoryLifecycleAndRender from './components/categories/reactQ/CategoryL
 import CategoryPropsAndData from './components/categories/reactQ/CategoryPropsAndData'
 import CategoryState from './components/categories/reactQ/CategoryState'
 import Details from './components/AppDetails';
+// import { useProgressiveNumber } from './hooks/useIncreaseNumber';
 // import audio from "./assets/winning-chimes-2015.wav"
 // import Navbar from './components/Navbar';
 
@@ -49,6 +50,10 @@ function App() {
       }, 0)
     }
     setEndNumber(endNumber + 300)
+  }
+
+  const handleChangeScore2 = () => {
+    // test the new hook and component
   }
 
   const handleClickButton = (category, index) => {

@@ -1,5 +1,14 @@
 import { useState } from 'react';
-import questions from '../../../data/reactQ/generalAQuestions'
+// import questions from '../../../data/reactQ/generalAQuestions'
+
+import generalAQuestions from '../../../data/reactQ/generalAQuestions'
+import companyQuestions from '../../../data/reactQ/companyInfoQuestions'
+import componentQuestions from '../../../data/reactQ/componentQuestions'
+import domQuestions from '../../../data/reactQ/domQuestions'
+import lifecycleAndRenderQuestions from '../../../data/reactQ/lifecycleAndRenderQuestions'
+import propsAndDataQuestions from '../../../data/reactQ/propsAndDataQuestions'
+import stateQuestions from '../../../data/reactQ/stateQuestions'
+
 import CategoriesSection from '../../CategoriesSection';
 import WrongAnswer from '../../WrongAnswer';
 import Retry from '../../Retry';
@@ -8,7 +17,33 @@ import winAudio from "../../../assets/final-level-bonus-2061.wav"
 import loseAudio from "../../../assets/player-losing-or-failing-2042.wav";
 import retryAudio from '../../../assets/retry-game-2016.wav'
 
-const CategoryReactGeneralOne = ({ onChange, score, categorySelected, setCategorySelected }) => {
+const CategorySelected = ({ onChange, score, categorySelected, setCategorySelected }) => {
+
+  let questions = ''
+  if (categorySelected === 'General') {
+    questions = generalAQuestions
+  }
+  if (categorySelected === 'Company') {
+    questions = companyQuestions
+  }
+  if (categorySelected === 'Component') {
+    questions = componentQuestions
+  }
+  if (categorySelected === 'DOM') {
+    questions = domQuestions
+  }
+  if (categorySelected === 'Lifecycle and Render') {
+    questions = lifecycleAndRenderQuestions
+  }
+  if (categorySelected === 'Props and Data') {
+    questions = propsAndDataQuestions
+  }
+  if (categorySelected === 'State') {
+    questions = stateQuestions
+  }
+
+  console.log("categorySelected :", categorySelected);
+  console.log("questions :", questions);
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [gameFinished, setGameFinished] = useState(false);
@@ -16,14 +51,14 @@ const CategoryReactGeneralOne = ({ onChange, score, categorySelected, setCategor
   const [categoryFinished, setCategoryFinished] = useState(false)
   const [retry, setRetry] = useState(false)
 
-  console.log("categorySelected: ", categorySelected);
+
   const handleAnswerClick = (isCorrect) => {
     if(isCorrect === true) {
       onChange(); // if correct answer -> increase the score
       const winSound = new Audio(winAudio)
       winSound.volume = 0.5
       winSound.play()
-      setTimeout(winSound.play(), 2000);
+      // setTimeout(winSound.play(), 2000);
     } else {
       setWrongAnswer(true)
       new Audio(loseAudio).play()
@@ -44,11 +79,11 @@ const CategoryReactGeneralOne = ({ onChange, score, categorySelected, setCategor
     setCurrentQuestion(0)
   }
 
-  console.log('gameFinished:', gameFinished);
-  console.log('wrongAnswer:', wrongAnswer);
-  console.log('categoryFinished:', categoryFinished);
-  console.log('retry:', retry);
-  console.log('------------------------------------------------');
+  // console.log('gameFinished:', gameFinished);
+  // console.log('wrongAnswer:', wrongAnswer);
+  // console.log('categoryFinished:', categoryFinished);
+  // console.log('retry:', retry);
+  // console.log('------------------------------------------------');
 
 
   return (
@@ -102,4 +137,4 @@ const CategoryReactGeneralOne = ({ onChange, score, categorySelected, setCategor
 }
 
 
-export default CategoryReactGeneralOne;
+export default CategorySelected;

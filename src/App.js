@@ -3,14 +3,17 @@ import { useState } from "react";
 import Score from "./components/Score";
 import GameFinished from "./components/GameFinished"
 import CategoriesSection from './components/CategoriesSection';
-import CategoryReactGeneralOne from './components/categories/reactQ/CategoryReactGeneralOne'
-import CategoryReactGeneralTwo from './components/categories/reactQ/CategoryReactGeneralTwo'
-import CategoryCompanyInfo from './components/categories/reactQ/CategoryCompanyInfo'
-import CategoryComponent from './components/categories/reactQ/CategoryComponent'
-import CategoryDOM from './components/categories/reactQ/CategoryDOM'
-import CategoryLifecycleAndRender from './components/categories/reactQ/CategoryLifecycleAndRender'
-import CategoryPropsAndData from './components/categories/reactQ/CategoryPropsAndData'
-import CategoryState from './components/categories/reactQ/CategoryState'
+
+import CategorySelectedComponent from './components/categories/reactQ/CategorySelected'
+
+// import CategoryReactGeneralOne from './components/categories/reactQ/CategoryReactGeneralOne'
+// import CategoryReactGeneralTwo from './components/categories/reactQ/CategoryReactGeneralTwo'
+// import CategoryCompanyInfo from './components/categories/reactQ/CategoryCompanyInfo'
+// import CategoryComponent from './components/categories/reactQ/CategoryComponent'
+// import CategoryDOM from './components/categories/reactQ/CategoryDOM'
+// import CategoryLifecycleAndRender from './components/categories/reactQ/CategoryLifecycleAndRender'
+// import CategoryPropsAndData from './components/categories/reactQ/CategoryPropsAndData'
+// import CategoryState from './components/categories/reactQ/CategoryState'
 import Details from './components/AppDetails';
 // import { useProgressiveNumber } from './hooks/useIncreaseNumber';
 // import audio from "./assets/winning-chimes-2015.wav"
@@ -52,9 +55,9 @@ function App() {
     setEndNumber(endNumber + 300)
   }
 
-  const handleChangeScore2 = () => {
-    // test the new hook and component
-  }
+  // const handleChangeScore2 = () => {
+  //   // test the new hook and component
+  // }
 
   const handleClickButton = (category, index) => {
     setCategorySelected((prev) => category)
@@ -97,7 +100,13 @@ function App() {
         {categorySelected === 'General' && 
           <>
             <Score score={score} />
-            <CategoryReactGeneralOne
+            {/* <CategoryReactGeneralOne
+              onChange={handleChangeScore}
+              score={score}
+              categorySelected={categorySelected}
+              setCategorySelected={setCategorySelected}
+            /> */}
+            <CategorySelectedComponent
               onChange={handleChangeScore}
               score={score}
               categorySelected={categorySelected}
@@ -108,18 +117,24 @@ function App() {
         {categorySelected === 'General 2' && 
           <>
             <Score score={score} />
-            <CategoryReactGeneralTwo
+            {/* <CategoryReactGeneralTwo
               onChange={handleChangeScore}
               score={score}
               categorySelected={categorySelected}
               setCategorySelected={setCategorySelected}
-            />
+            /> */}
           </>
         }
         {categorySelected === 'Company' && 
           <>
             <Score score={score} />
-            <CategoryCompanyInfo
+            {/* <CategoryCompanyInfo
+              onChange={handleChangeScore}
+              score={score}
+              categorySelected={categorySelected}
+              setCategorySelected={setCategorySelected}
+            /> */}
+            <CategorySelectedComponent
               onChange={handleChangeScore}
               score={score}
               categorySelected={categorySelected}
@@ -130,7 +145,13 @@ function App() {
         {categorySelected === 'Component' && 
           <>
             <Score score={score} />
-            <CategoryComponent
+            {/* <CategoryComponent
+              onChange={handleChangeScore}
+              score={score}
+              categorySelected={categorySelected}
+              setCategorySelected={setCategorySelected}
+            /> */}
+            <CategorySelectedComponent
               onChange={handleChangeScore}
               score={score}
               categorySelected={categorySelected}
@@ -141,7 +162,13 @@ function App() {
         {categorySelected === 'DOM' && 
           <>
             <Score score={score} />
-            <CategoryDOM
+            {/* <CategoryDOM
+              onChange={handleChangeScore}
+              score={score}
+              categorySelected={categorySelected}
+              setCategorySelected={setCategorySelected}
+            /> */}
+            <CategorySelectedComponent
               onChange={handleChangeScore}
               score={score}
               categorySelected={categorySelected}
@@ -152,7 +179,13 @@ function App() {
         {categorySelected === 'Lifecycle and Render' && 
           <>
             <Score score={score} />
-            <CategoryLifecycleAndRender
+            {/* <CategoryLifecycleAndRender
+              onChange={handleChangeScore}
+              score={score}
+              categorySelected={categorySelected}
+              setCategorySelected={setCategorySelected}
+            /> */}
+            <CategorySelectedComponent
               onChange={handleChangeScore}
               score={score}
               categorySelected={categorySelected}
@@ -163,7 +196,13 @@ function App() {
         {categorySelected === 'Props and Data' && 
           <>
             <Score score={score} />
-            <CategoryPropsAndData
+            {/* <CategoryPropsAndData
+              onChange={handleChangeScore}
+              score={score}
+              categorySelected={categorySelected}
+              setCategorySelected={setCategorySelected}
+            /> */}
+            <CategorySelectedComponent
               onChange={handleChangeScore}
               score={score}
               categorySelected={categorySelected}
@@ -174,7 +213,13 @@ function App() {
         {categorySelected === 'State' && 
           <>
             <Score score={score} />
-            <CategoryState
+            {/* <CategoryState
+              onChange={handleChangeScore}
+              score={score}
+              categorySelected={categorySelected}
+              setCategorySelected={setCategorySelected}
+            /> */}
+            <CategorySelectedComponent
               onChange={handleChangeScore}
               score={score}
               categorySelected={categorySelected}

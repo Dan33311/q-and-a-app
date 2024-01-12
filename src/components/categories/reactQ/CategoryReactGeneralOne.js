@@ -4,8 +4,9 @@ import CategoriesSection from '../../CategoriesSection';
 import WrongAnswer from '../../WrongAnswer';
 import Retry from '../../Retry';
 import CategoryFinished from '../../CategoryFinished';
-import audio from "../../../assets/winning-chimes-2015.wav"
-
+import winAudio from "../../../assets/final-level-bonus-2061.wav"
+import loseAudio from "../../../assets/player-losing-or-failing-2042.wav";
+import retryAudio from '../../../assets/retry-game-2016.wav'
 
 const CategoryReactGeneralOne = ({ onChange, score, categorySelected, setCategorySelected }) => {
 
@@ -18,10 +19,14 @@ const CategoryReactGeneralOne = ({ onChange, score, categorySelected, setCategor
 
   const handleAnswerClick = (isCorrect) => {
     if(isCorrect === true) {
-      new Audio(audio).play()
       onChange(); // if correct answer -> increase the score
+      const winSound = new Audio(winAudio)
+      winSound.volume = 0.5
+      winSound.play()
+      setTimeout(winSound.play(), 2000);
     } else {
       setWrongAnswer(true)
+      new Audio(loseAudio).play()
     }
     if(currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
@@ -31,6 +36,9 @@ const CategoryReactGeneralOne = ({ onChange, score, categorySelected, setCategor
   }
 
   const handleClickRetryButton = () => {
+    const retrySound = new Audio(retryAudio)
+    retrySound.volume = 0.3
+    retrySound.play()
     setGameFinished(true)
     setRetry(true)
     setCurrentQuestion(0)

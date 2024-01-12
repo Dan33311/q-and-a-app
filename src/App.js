@@ -47,7 +47,7 @@ function App() {
       setTimeout(() => {
         handleChangeScore()
         i++
-      }, 0)
+      }, 5)
     }
     setEndNumber(endNumber + 300)
   }

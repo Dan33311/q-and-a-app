@@ -9,7 +9,7 @@ const CategoriesSection = ({ categories, handleClickButton }) => {
           {categories.map((categ, index) => (
             <button 
               key={index} 
-              className='categ-btn' 
+              className="categ-btn" 
               onClick={() => handleClickButton(categ, index)}
             >
               {categ}
@@ -18,7 +18,7 @@ const CategoriesSection = ({ categories, handleClickButton }) => {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default CategoriesSection;
+export default CategoriesSection

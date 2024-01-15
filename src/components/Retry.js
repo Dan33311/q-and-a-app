@@ -5,12 +5,12 @@ const Retry = ({ score }) => {
   }
 
   return ( 
-    <div className='retry-section wrong-answer'>
+    <div className="retry-section wrong-answer">
       <h4>🔔 You walked away !</h4>
       <p>You have won: 💳 <span>{ score }</span> BTC</p>
       <button className="green-btn" onClick={handleClickTryAgainButton}>New Game</button>
     </div>
-  );
+  )
 }
 
-export default Retry;
+export default Retry

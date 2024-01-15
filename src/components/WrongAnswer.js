@@ -6,12 +6,12 @@ const WrongAnswer = ({ score }) => {
   }
 
   return (
-    <div className='wrong-answer'>
+    <div className="wrong-answer">
       <h4>❌ Wrong answer</h4>
       <p>You have won: 💳 <span>{ score }</span> BTC</p>
       <button className="green-btn" onClick={() => handleClickTryAgainButton()}>New Game</button>
     </div>
-  );
+  )
 }
 
-export default WrongAnswer;
+export default WrongAnswer

@@ -1,30 +1,18 @@
-import './App.css';
-import { useState } from "react";
-import Score from "./components/Score";
+import "./App.css"
+import { useState } from "react"
+import Score from "./components/Score"
 import GameFinished from "./components/GameFinished"
-import CategoriesSection from './components/CategoriesSection';
-
-import CategorySelectedComponent from './components/categories/reactQ/CategorySelected'
-
-// import CategoryReactGeneralOne from './components/categories/reactQ/CategoryReactGeneralOne'
-// import CategoryReactGeneralTwo from './components/categories/reactQ/CategoryReactGeneralTwo'
-// import CategoryCompanyInfo from './components/categories/reactQ/CategoryCompanyInfo'
-// import CategoryComponent from './components/categories/reactQ/CategoryComponent'
-// import CategoryDOM from './components/categories/reactQ/CategoryDOM'
-// import CategoryLifecycleAndRender from './components/categories/reactQ/CategoryLifecycleAndRender'
-// import CategoryPropsAndData from './components/categories/reactQ/CategoryPropsAndData'
-// import CategoryState from './components/categories/reactQ/CategoryState'
-import Details from './components/AppDetails';
+import CategoriesSection from "./components/CategoriesSection"
+import CategorySelectedComponent from "./components/CategorySelected"
+import Details from "./components/AppDetails"
 // import { useProgressiveNumber } from './hooks/useIncreaseNumber';
-// import audio from "./assets/winning-chimes-2015.wav"
 // import Navbar from './components/Navbar';
-
 
 
 function App() {
 
   const [categories, setCategories] = useState([ 
-    'General',
+    'general',
     // 'General 2',
     'Company',
     'Component',
@@ -43,8 +31,6 @@ function App() {
   let i = score
   const handleChangeScore = () => {
     setScore(score + 300)
-    // console.log("audio: ", new Audio(audio).play());
-    
     if (i < endNumber) {
       setScore(i)
       setTimeout(() => {
@@ -56,7 +42,7 @@ function App() {
   }
 
   // const handleChangeScore2 = () => {
-  //   // test the new hook and component
+    // TODO: test the new hook and component
   // }
 
   const handleClickButton = (category, index) => {
@@ -97,15 +83,9 @@ function App() {
           : null
         }
 
-        {categorySelected === 'General' && 
+        {categorySelected === 'general' && 
           <>
             <Score score={score} />
-            {/* <CategoryReactGeneralOne
-              onChange={handleChangeScore}
-              score={score}
-              categorySelected={categorySelected}
-              setCategorySelected={setCategorySelected}
-            /> */}
             <CategorySelectedComponent
               onChange={handleChangeScore}
               score={score}
@@ -117,23 +97,11 @@ function App() {
         {categorySelected === 'General 2' && 
           <>
             <Score score={score} />
-            {/* <CategoryReactGeneralTwo
-              onChange={handleChangeScore}
-              score={score}
-              categorySelected={categorySelected}
-              setCategorySelected={setCategorySelected}
-            /> */}
           </>
         }
         {categorySelected === 'Company' && 
           <>
             <Score score={score} />
-            {/* <CategoryCompanyInfo
-              onChange={handleChangeScore}
-              score={score}
-              categorySelected={categorySelected}
-              setCategorySelected={setCategorySelected}
-            /> */}
             <CategorySelectedComponent
               onChange={handleChangeScore}
               score={score}
@@ -145,12 +113,6 @@ function App() {
         {categorySelected === 'Component' && 
           <>
             <Score score={score} />
-            {/* <CategoryComponent
-              onChange={handleChangeScore}
-              score={score}
-              categorySelected={categorySelected}
-              setCategorySelected={setCategorySelected}
-            /> */}
             <CategorySelectedComponent
               onChange={handleChangeScore}
               score={score}
@@ -162,12 +124,6 @@ function App() {
         {categorySelected === 'DOM' && 
           <>
             <Score score={score} />
-            {/* <CategoryDOM
-              onChange={handleChangeScore}
-              score={score}
-              categorySelected={categorySelected}
-              setCategorySelected={setCategorySelected}
-            /> */}
             <CategorySelectedComponent
               onChange={handleChangeScore}
               score={score}
@@ -179,12 +135,6 @@ function App() {
         {categorySelected === 'Lifecycle and Render' && 
           <>
             <Score score={score} />
-            {/* <CategoryLifecycleAndRender
-              onChange={handleChangeScore}
-              score={score}
-              categorySelected={categorySelected}
-              setCategorySelected={setCategorySelected}
-            /> */}
             <CategorySelectedComponent
               onChange={handleChangeScore}
               score={score}
@@ -196,12 +146,6 @@ function App() {
         {categorySelected === 'Props and Data' && 
           <>
             <Score score={score} />
-            {/* <CategoryPropsAndData
-              onChange={handleChangeScore}
-              score={score}
-              categorySelected={categorySelected}
-              setCategorySelected={setCategorySelected}
-            /> */}
             <CategorySelectedComponent
               onChange={handleChangeScore}
               score={score}
@@ -213,12 +157,6 @@ function App() {
         {categorySelected === 'State' && 
           <>
             <Score score={score} />
-            {/* <CategoryState
-              onChange={handleChangeScore}
-              score={score}
-              categorySelected={categorySelected}
-              setCategorySelected={setCategorySelected}
-            /> */}
             <CategorySelectedComponent
               onChange={handleChangeScore}
               score={score}
@@ -229,7 +167,7 @@ function App() {
         }
       </>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

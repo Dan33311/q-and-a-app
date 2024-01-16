@@ -29,7 +29,7 @@ const Details = ({ setIsPlaying }) => {
 
   return (
     <>
-      <button className="green-btn text-container" onClick={() => setIsPlaying(true)}>Play</button>
+      <button className="green-btn text-container" onClick={() => setIsPlaying(true)}>Start Playing</button>
       <div className="gradient-bg app-details">
         {/* <p className='description'>ReactQuiz, is a quiz competition where contestants have to correctly answer a series of multiple-choice questions in order to advance to the next category.</p> */}
         {/* <p className='description'>Quizz, es un concurso de preguntas en el que los concursantes tienen que responder correctamente a una serie de preguntas de opción múltiple para pasar a la siguiente categoría.</p> */}

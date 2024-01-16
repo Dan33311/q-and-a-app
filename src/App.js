@@ -57,7 +57,7 @@ function App() {
   return (
     <div className="App">
       <>
-        <h2>QuizApp</h2>
+        {/* <h2>QuizApp</h2> */}
         {/* <Navbar /> */}
 
         {!isPlaying &&
